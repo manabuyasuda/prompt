@@ -1,4 +1,4 @@
-extend /assets/pug/_layout
+extend /assets/pug/_layout-index
 append variables
   - var pageTitle= site.name;
   - var pageDescription= site.description;
@@ -7,5 +7,10 @@ append variables
   - var pageOgpType= "website"; // トップページは"website"、それ以外は"article"を指定する
   - var pageOgpImage= site.ogpImage; // 共通画像を使わない場合は変更する
   - var pageOgpDescription= pageDescription; // `pageDescription`と同じものを使う
+
+block append css
+  //- link(rel="stylesheet" href="css/style.css")
+block append js
+  //- script(src="js/single.js")
 
 block content

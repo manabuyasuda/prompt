@@ -1,13 +1,13 @@
 meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(name="format-detection" content="telephone=no")
 title #{pageTitle}
 meta(name="description" content=pageDescription)
 meta(name="keywords" content=pageKeywords)
 
-link(rel="stylesheet" href="/assets/css/common.css")
-
-meta(name="format-detection" content="telephone=no")
+block css
+  link(rel="stylesheet" href="/assets/css/common.css")
 
 //- OGP
 meta(property="og:title" content=pageOgpTitle)
