@@ -20,12 +20,17 @@ gulp.task('pug', function() {
   return gulp.src(develop.pug)
   .pipe(data(function() {
     return {
+      // JSONファイルの読みこみ。
       'site': require('./develop/assets/json/site.json'),
       'data': require('./develop/assets/json/data.json')
     };
   }))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(pug({
+    // Pugファイルのルートディレクトリを指定する。
+    // `/assets/pug/_layout`のようにルート相対パスが使える。
+    basedir: 'develop',
+    // Pugファイルの整形。
     pretty: true
   }))
   .pipe(gulp.dest(release.pug));
