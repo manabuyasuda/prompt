@@ -1,0 +1,21 @@
+{
+  "name": "prompt",
+  "version": "0.0.0",
+  "description": "Make a quick operation of the site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "pug"
+  ],
+  "author": "Manabu Yasuda",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.0.4"
+  }
+}
