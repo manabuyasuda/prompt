@@ -1,0 +1,11 @@
+extend /assets/pug/_layout
+append variables
+  - var pageTitle= "ページタイトル" + " | " + site.name;
+  - var pageDescription= "ページの説明";
+  - var pageKeywords= site.keywords;
+  - var pageOgpTitle= "ページタイトル";
+  - var pageOgpType= "article"; // トップページは"website"、それ以外は"article"を指定する
+  - var pageOgpImage= site.ogpImage; // 共通画像を使わない場合は変更する
+  - var pageOgpDescription= pageDescription; // `pageDescription`と同じものを使う
+
+block content

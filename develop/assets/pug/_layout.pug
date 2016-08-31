@@ -1,0 +1,16 @@
+//- 出力用のPugファイルで変数を定義する。
+block variables
+doctype html
+html(lang="ja")
+  //- トップページとそれ以外のページで`<head>`要素を出し分ける。
+  if pageOgpType == "website"
+    head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#")
+      include /assets/pug/_meta
+  else
+    head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
+      include /assets/pug/_meta
+
+  body
+    block content
+
+    include /assets/pug/_script

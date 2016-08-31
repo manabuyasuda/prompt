@@ -1,0 +1,31 @@
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+title #{pageTitle}
+meta(name="description" content=pageDescription)
+meta(name="keywords" content=pageKeywords)
+
+link(rel="stylesheet" href="/assets/css/common.css")
+
+meta(name="format-detection" content="telephone=no")
+
+//- OGP
+meta(property="og:title" content=pageOgpTitle)
+meta(property="og:type" content=pageOgpType)
+meta(property="og:image" content=pageOgpImage)
+meta(property="og:url" content=site.rootUrl)
+meta(property="og:description" content=pageDescription)
+meta(property="og:site_name" content=site.name)
+meta(property="og:locale" content="ja")
+
+//- OGP Facebook insights
+meta(property="fb:admins" content=site.facebookAdmins)
+meta(property="fb:app_id" content=site.facebookAppId)
+//- /OGP Facebook insights
+
+//- OGP Twitter Cards
+meta(name="twitter:card" content=site.twitterCard)
+meta(name="twitter:site" content=site.twitterSite)
+//- /OGP Twitter Cards
+
+//- /OGP
