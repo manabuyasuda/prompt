@@ -10,6 +10,9 @@ var autoprefixer = require('gulp-autoprefixer');
 var csscomb = require('gulp-csscomb');
 var cleanCss = require('gulp-clean-css')
 
+// Js
+var uglify = require('gulp-uglify');
+
 // Image
 var imagemin = require('gulp-imagemin');
 
@@ -26,6 +29,9 @@ var notify = require("gulp-notify");
 var concat = require('gulp-concat');
 var rimraf = require('rimraf');
 
+/**
+ * 開発用ディレクトリ
+ */
 var develop = {
   'pug': ['develop/**/*.pug', '!' + 'develop/**/_*.pug'],
   'sass': 'develop/**/*.scss',
@@ -35,11 +41,24 @@ var develop = {
   'iconfont': 'develop/assets/icon/*.svg'
 }
 
+/**
+ * コンパイル先ディレクトリ
+ */
 var release = {
   'root': 'release/',
   'pug': 'release/',
   'bundleJs': 'release/assets/js/bundle/',
   'iconfont': 'develop/assets/font/'
+}
+
+/**
+ * 公開用ディレクトリ
+ */
+var public = {
+  'root': 'htdocs/',
+  'image': ['htdocs/**/*.{png,jpg,gif,svg}', '!' + 'htdocs/assets/icon/*.svg', '!' + 'htdocs/assets/font/*.svg'],
+  'css': 'htdocs/**/*.css',
+  'js': 'htdocs/**/*.js'
 }
 
 var AUTOPREFIXER_BROWSERS = [
@@ -59,7 +78,7 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 /**
- * `.pug`をコンパイルしてから、リリースディレクトリに出力します。
+ * `.pug`をコンパイルしてから、releaseディレクトリに出力します。
  * JSONの読み込み、ルート相対パス、Pugの整形に対応しています。
  */
 gulp.task('pug', function() {
@@ -85,7 +104,7 @@ gulp.task('pug', function() {
 
 
 /**
- * `.scss`をコンパイルしてから、リリースディレクトリに出力します。
+ * `.scss`をコンパイルしてから、releaseディレクトリに出力します。
  * ベンダープレフィックスを付与後、csscombで整形されます。
  */
 gulp.task('sass', function(){
@@ -97,15 +116,13 @@ gulp.task('sass', function(){
     browsers: AUTOPREFIXER_BROWSERS,
   }))
   .pipe(csscomb())
-  // CSSのMinify
-  // .pipe(cleanCss())
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(release.root))
   .pipe(browserSync.reload({stream: true}));
 });
 
 /**
- * デフォルトjsファイルとjQueryをリリースディレクトリに出力します。
+ * デフォルトjsファイルとjQueryをreleaseディレクトリに出力します。
  */
 gulp.task('js', function() {
   return gulp.src(develop.js, {base: develop.root})
@@ -114,7 +131,7 @@ gulp.task('js', function() {
 });
 
 /**
- * デベロップディレクトリにあるjQueryプラグインなどのファイルを連結してリリースディレクトリに出力します。
+ * developディレクトリにあるjQueryプラグインなどのファイルを連結してreleaseディレクトリに出力します。
  */
 gulp.task('bundleJs', function() {
   return gulp.src(develop.bundleJs)
@@ -126,53 +143,44 @@ gulp.task('bundleJs', function() {
 });
 
 /**
- * デベロップディレクトリの画像を圧縮、
- * 階層構造を維持したまま、リリースディレクトリに出力します。
+ * developディレクトリの画像を階層構造を維持したまま、releaseディレクトリに出力します。
  */
 gulp.task('image', function() {
   return gulp.src(develop.image)
-  .pipe(imagemin({
-    // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
-    progressive: true,
-    // gifをインターレースgifにします。
-    interlaced: true,
-    // PNGファイルの圧縮率（7が最高）を指定します。
-    optimizationLevel: 7
-  }))
   .pipe(gulp.dest(release.root))
   .pipe(browserSync.reload({stream: true}));
 });
 
 /**
  * アイコンフォントを作成します。
- * 開発用ディレクトリのiconディレクトリ内にSVGファイルを保存すると、
+ * developディレクトリのiconディレクトリ内にSVGファイルを保存すると、
  * assets/fontディレクトリにフォントファイルが、
  * assets/css/object/projectディレクトリに専用のscssファイルが生成されます。
- * フォントファイルはリリースディレクトリにコピーされます。
+ * フォントファイルはreleaseディレクトリにコピーされます。
  */
 gulp.task('createIconfont', function(){
   var fontName = 'iconfont';
   return gulp.src(develop.iconfont)
-    .pipe(iconfontCss({
-      fontName: fontName, // 生成されるフォントの名前（iconfontと同じにするため変数化）
-      path: 'develop/assets/icon/template/_icon.scss',  // アイコンフォント用CSSのテンプレートファイル
-      targetPath: '../css/object/project/_icon.scss',  // scssファイルを出力するパス（gulp.destの出力先からみた相対パス）
-      fontPath: '../font/' // 最終的に出力されるCSSからみた、フォントファイルまでの相対パス
-    }))
-    .pipe(iconfont({
-      fontName: fontName,
-      formats: ['ttf', 'eot', 'woff', 'svg'], // 出力するフォントファイルの形式
-      // startUnicode: 0xF001,
-      // appendCodepoints: false
-      // normalize: true,
-      // fontHeight: 500
-    }))
-    .pipe(gulp.dest(release.iconfont));
+  .pipe(iconfontCss({
+    fontName: fontName, // 生成されるフォントの名前（iconfontと同じにするため変数化）
+    path: 'develop/assets/icon/template/_icon.scss',  // アイコンフォント用CSSのテンプレートファイル
+    targetPath: '../css/object/project/_icon.scss',  // scssファイルを出力するパス（gulp.destの出力先からみた相対パス）
+    fontPath: '../font/' // 最終的に出力されるCSSからみた、フォントファイルまでの相対パス
+  }))
+  .pipe(iconfont({
+    fontName: fontName,
+    formats: ['ttf', 'eot', 'woff', 'svg'], // 出力するフォントファイルの形式
+    // startUnicode: 0xF001,
+    // appendCodepoints: false
+    // normalize: true,
+    // fontHeight: 500
+  }))
+  .pipe(gulp.dest(release.iconfont));
 });
 
 gulp.task('copyIconfont', function() {
   return gulp.src('develop/assets/font/*.{woff,eot,svg,ttf}')
-    .pipe(gulp.dest('release/assets/font/'));
+  .pipe(gulp.dest('release/assets/font/'));
 });
 
 gulp.task('iconfont', function() {
@@ -184,14 +192,14 @@ gulp.task('iconfont', function() {
 
 
 /**
- * リリースディレクトリを削除します。
+ * releaseディレクトリを削除します。
  */
-gulp.task('clean', function (cb) {
+gulp.task('clean-release', function (cb) {
   rimraf(release.root, cb);
 });
 
 /**
- * 一連のタスクを処理します（画像の圧縮は`release`タスクでおこないます）。
+ * 一連のタスクを処理します（画像の圧縮は`gulp public`タスクでおこないます）。
  */
 gulp.task('build', ['pug', 'sass', 'js', 'bundleJs', 'image', 'iconfont']);
 
@@ -225,9 +233,76 @@ gulp.task('browser-sync', function() {
  * `gulp`タスクにbrowser-syncを追加します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean-release'], function() {
   runSequence(
     'watch',
     'browser-sync'
   )
 });
+
+/**
+ * publicディレクトリを削除します。
+ */
+gulp.task('clean-public', function (cb) {
+  rimraf(public.root, cb);
+});
+
+/**
+ * releaseディレクトリをpublicディレクトリにコピーします。
+ */
+gulp.task('copy-release', function() {
+  return gulp.src(release.root + '**/')
+  .pipe(gulp.dest(public.root));
+});
+
+/**
+ * publicディレクトリ内の画像を圧縮します。
+ */
+gulp.task('minify-image-public', function() {
+  return gulp.src(public.image)
+  .pipe(imagemin({
+    // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
+    progressive: true,
+    // gifをインターレースgifにします。
+    interlaced: true,
+    // PNGファイルの圧縮率（7が最高）を指定します。
+    optimizationLevel: 7
+  }))
+  .pipe(gulp.dest(public.root));
+});
+
+/**
+ * publicディレクトリ内のCSSをMinifyします。
+ */
+gulp.task('minify-css-public', function() {
+  return gulp.src(public.css, {base: public.root})
+  .pipe(sourcemaps.init())
+  .pipe(autoprefixer({
+    browsers: AUTOPREFIXER_BROWSERS,
+  }))
+  .pipe(csscomb())
+  .pipe(cleanCss())
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(public.root));
+});
+
+/**
+ * publicディレクトリ内のJSをMinifyします。
+ */
+gulp.task('minify-js-public', function() {
+  return gulp.src(public.js, {base: public.root})
+  .pipe(uglify({preserveComments: 'license'}))
+  .pipe(gulp.dest(public.root));
+});
+
+/**
+ * サーバーにあげる公開用のファイルを生成するタスクです。
+ * releaseディレクトリのファイルをコピーし、Minifyします。
+ */
+gulp.task('public', ['clean-public'], function() {
+  runSequence(
+    'copy-release',
+    ['minify-image-public', 'minify-css-public', 'minify-js-public']
+  )
+});
+

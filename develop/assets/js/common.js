@@ -1,6 +1,3 @@
-/**
- * common.js
- */
 $(function() {
   // 共通の変数は`NS`名前空間をスコープにします。
   var NS = NS || {};
