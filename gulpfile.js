@@ -2,7 +2,6 @@ var gulp = require('gulp');
 
 // Pug
 var pug = require('gulp-pug');
-var data = require('gulp-data');
 
 // Sass
 var sass = require('gulp-sass')
@@ -82,18 +81,18 @@ var AUTOPREFIXER_BROWSERS = [
  * JSONの読み込み、ルート相対パス、Pugの整形に対応しています。
  */
 gulp.task('pug', function() {
+  // JSONファイルの読み込み。
+  var locals = {
+    'site': require('./develop/assets/json/site.json'),
+    'data': require('./develop/assets/json/data.json')
+  }
   return gulp.src(develop.pug)
-  .pipe(data(function() {
-    return {
-      // JSONファイルの読みこみ。
-      'site': require('./develop/assets/json/site.json'),
-      'data': require('./develop/assets/json/data.json')
-    };
-  }))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(pug({
-    // Pugファイルのルートディレクトリを指定する。
-    // `/assets/pug/_layout`のようにルート相対パスが使える。
+    // JSONファイルをPugに渡します。
+    locals: locals,
+    // Pugファイルのルートディレクトリを指定します。
+    // `/assets/pug/_layout`のようにルート相対パスを使います。
     basedir: 'develop',
     // Pugファイルの整形。
     pretty: true

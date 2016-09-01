@@ -19,7 +19,6 @@
     "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-csscomb": "^3.0.7",
-    "gulp-data": "^1.2.1",
     "gulp-iconfont": "^8.0.1",
     "gulp-iconfont-css": "^2.1.0",
     "gulp-imagemin": "^3.0.3",
