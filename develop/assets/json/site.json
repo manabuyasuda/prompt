@@ -3,10 +3,5 @@
   "description": "サイトの概要",
   "keywords": "サイトのキーワード1, サイトのキーワード2",
   "rootUrl": "http://example.com/",
-  "ogpImage": "http://example.com/images/og-image.jpg",
-  "facebookAdmins": "",
-  "facebookAppId": "",
-  "twitterCard": "summary",
-  "twitterSite": "@",
-  "analyticsId": ""
+  "ogpImage": "http://example.com/images/og-image.jpg"
 }
