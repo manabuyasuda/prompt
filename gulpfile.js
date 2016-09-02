@@ -168,7 +168,7 @@ gulp.task('iconfont', function() {
     fontName: fontName,
     formats: ['ttf', 'eot', 'woff', 'svg'],
     // SVGファイル名にUnicodeを付与します（recommended option）。
-    // prependUnicode: true
+    prependUnicode: true
   }))
   .on('glyphs', function(codepoints, opt) {
     var options = {
@@ -183,7 +183,7 @@ gulp.task('iconfont', function() {
     gulp.src(develop.iconfontCss)
     .pipe(consolidate('lodash', options))
     .pipe(rename({
-      basename: '_' + fontName
+      basename: '_icon'
     }))
     .pipe(gulp.dest(release.iconfontCss));
     // アイコンフォントのサンプルHTMLを生成します。

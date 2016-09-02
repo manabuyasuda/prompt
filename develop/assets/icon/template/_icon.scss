@@ -60,5 +60,5 @@ categories: [project]
   speak: none;
 }
 
-<% _.each(glyphs, function(glyph) { %>.<%= className %>--<%= glyph.name %>:before { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" }
+<% _.each(glyphs, function(glyph) { %>.<%= className %>--<%= glyph.name %>:before { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>"; }
 <% }); %>
