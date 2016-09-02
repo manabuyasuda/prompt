@@ -10,6 +10,7 @@ var csscomb = require('gulp-csscomb');
 var cleanCss = require('gulp-clean-css')
 
 // Js
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 // Image
@@ -17,7 +18,8 @@ var imagemin = require('gulp-imagemin');
 
 // Iconfont
 var iconfont = require('gulp-iconfont');
-var iconfontCss = require('gulp-iconfont-css');
+var rename = require("gulp-rename");
+var consolidate = require('gulp-consolidate');
 
 // Utility
 var runSequence = require('run-sequence');
@@ -25,7 +27,6 @@ var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var notify = require("gulp-notify");
-var concat = require('gulp-concat');
 var rimraf = require('rimraf');
 
 /**
@@ -37,7 +38,9 @@ var develop = {
   'js': ['develop/**/*.js', '!' + 'develop/assets/js/bundle/**/*.js'],
   'bundleJs': 'develop/assets/js/bundle/**/*.js',
   'image': ['develop/**/*.{png,jpg,gif,svg}', '!' + 'develop/assets/icon/*.svg', '!' + 'develop/assets/font/*.svg'],
-  'iconfont': 'develop/assets/icon/*.svg'
+  'iconfont': 'develop/assets/icon/*.svg',
+  'iconfontCss': 'develop/assets/icon/template/_icon.scss',
+  'iconfontHtml': 'develop/assets/icon/template/_icon.html'
 }
 
 /**
@@ -47,7 +50,10 @@ var release = {
   'root': 'release/',
   'pug': 'release/',
   'bundleJs': 'release/assets/js/bundle/',
-  'iconfont': 'develop/assets/font/'
+  'iconfont': 'develop/assets/font/',
+  'iconfontCss': 'develop/assets/css/object/project/',
+  'iconfontHtml': 'release/assets/iconfont/',
+  'iconfontFont': 'release/assets/font/'
 }
 
 /**
@@ -151,44 +157,45 @@ gulp.task('image', function() {
 });
 
 /**
- * アイコンフォントを作成します。
- * developディレクトリのiconディレクトリ内にSVGファイルを保存すると、
- * assets/fontディレクトリにフォントファイルが、
- * assets/css/object/projectディレクトリに専用のscssファイルが生成されます。
- * フォントファイルはreleaseディレクトリにコピーされます。
+ * SVGからアイコンフォントを生成します。
+ * アイコンフォント用のSassファイルとHTMLファイルも生成します。
  */
-gulp.task('createIconfont', function(){
-  var fontName = 'iconfont';
+gulp.task('iconfont', function() {
+  // シンボルフォント名を指定します。
+  var fontName = 'icon';
   return gulp.src(develop.iconfont)
-  .pipe(iconfontCss({
-    fontName: fontName, // 生成されるフォントの名前（iconfontと同じにするため変数化）
-    path: 'develop/assets/icon/template/_icon.scss',  // アイコンフォント用CSSのテンプレートファイル
-    targetPath: '../css/object/project/_icon.scss',  // scssファイルを出力するパス（gulp.destの出力先からみた相対パス）
-    fontPath: '../font/' // 最終的に出力されるCSSからみた、フォントファイルまでの相対パス
-  }))
   .pipe(iconfont({
     fontName: fontName,
-    formats: ['ttf', 'eot', 'woff', 'svg'], // 出力するフォントファイルの形式
-    // startUnicode: 0xF001,
-    // appendCodepoints: false
-    // normalize: true,
-    // fontHeight: 500
+    formats: ['ttf', 'eot', 'woff', 'svg'],
+    // SVGファイル名にUnicodeを付与します（recommended option）。
+    // prependUnicode: true
   }))
-  .pipe(gulp.dest(release.iconfont));
+  .on('glyphs', function(codepoints, opt) {
+    var options = {
+      glyphs: codepoints,
+      fontName: fontName,
+      // CSSファイルからfontファイルまでの相対パスを指定します。
+      fontPath: '../font/',
+      // CSSのクラス名を指定します。
+      className: 'p-icon'
+    };
+    // CSSのテンプレートからSassファイルを生成します。
+    gulp.src(develop.iconfontCss)
+    .pipe(consolidate('lodash', options))
+    .pipe(rename({
+      basename: '_' + fontName
+    }))
+    .pipe(gulp.dest(release.iconfontCss));
+    // アイコンフォントのサンプルHTMLを生成します。
+    gulp.src(develop.iconfontHtml)
+    .pipe(consolidate('lodash', options))
+    .pipe(rename({
+      basename: 'iconfont'
+    }))
+    .pipe(gulp.dest(release.iconfontHtml))
+  })
+  .pipe(gulp.dest(release.iconfontFont));
 });
-
-gulp.task('copyIconfont', function() {
-  return gulp.src('develop/assets/font/*.{woff,eot,svg,ttf}')
-  .pipe(gulp.dest('release/assets/font/'));
-});
-
-gulp.task('iconfont', function() {
-  runSequence(
-    'createIconfont',
-    'copyIconfont'
-  )
-});
-
 
 /**
  * releaseディレクトリを削除します。
@@ -200,7 +207,11 @@ gulp.task('clean-release', function (cb) {
 /**
  * 一連のタスクを処理します（画像の圧縮は`gulp public`タスクでおこないます）。
  */
-gulp.task('build', ['pug', 'sass', 'js', 'bundleJs', 'image', 'iconfont']);
+gulp.task('build', ['iconfont'], function() {
+  runSequence(
+    ['pug', 'sass', 'js', 'bundleJs', 'image']
+    )
+});
 
 /**
  * watchタスクを指定します。

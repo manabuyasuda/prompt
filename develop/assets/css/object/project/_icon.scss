@@ -32,29 +32,20 @@ categories: [project]
 </div>
 ```
 */
-// 任意のクラスの擬似要素で表示する場合は@mixinを使って、
-// ベーススタイルとアイコンの名前を取得します。
-// @example scss
-// .p-list__link {
-//   &:after {
-//     @include _p-icon;
-//     @include _p-icon-name(chevron-right);
-//   }
-// }
 @font-face {
-  font-family: "iconfont";
-  src: url('../font/iconfont.eot');
-  src: url('../font/iconfont.eot?#iefix') format('eot'),
-    url('../font/iconfont.woff') format('woff'),
-    url('../font/iconfont.ttf') format('truetype'),
-    url('../font/iconfont.svg#iconfont') format('svg');
+  font-family: "icon";
+  src: url('../font/icon.eot');
+  src: url('../font/icon.eot?#iefix') format('eot'),
+    url('../font/icon.woff') format('woff'),
+    url('../font/icon.ttf') format('truetype'),
+    url('../font/icon.svg#icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-// アイコンフォントのベーススタイル
-@mixin _p-icon {
-  font-family: "iconfont";
+.p-icon {
+  display: inline-block;
+  font-family: "icon";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
@@ -70,25 +61,4 @@ categories: [project]
   speak: none;
 }
 
-/* `p-icon p-icon--icon-name`のようなマルチクラスで指定します。 */
-.p-icon {
-  display: inline-block;
-}
-
-.p-icon:before {
-  @include _p-icon;
-}
-
-@function _icon-char($filename) {
-  $char: "";
-
-  @if $filename == home { $char: "\E001"; }
-
-  @return $char;
-}
-
-@mixin _p-icon-name($filename) {
-  & { content: _icon-char($filename); }
-}
-
-.p-icon--home:before { @include _p-icon-name(home); }
+.p-icon--home:before { content: "\EA01" }
