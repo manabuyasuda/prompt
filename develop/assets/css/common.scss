@@ -52,6 +52,7 @@
  * flag...画像とテキストが横並びになるオブジェクトです。縦方向の指定ができます。
  * list-unstyled...`<ul>`と`<ol>`でデフォルトスタイルをリセットします。
  * list-ordered...番号付きリストを入れ子レベルに応じて、1, 1.1のように区切り文字を付け加えます。
+ * list-addstyle...行頭に中黒（・）などの記号を入力するリストタイプです。
  * list-mark...リストアイテムの左にアイコンを配置します。
  * embed...Youtubeなどをアスペクト比を固定してレスポンシブ対応させる場合に使用します。
  * ratio...アスペクト比を固定したまま伸縮させます。
@@ -179,6 +180,7 @@
 @import "object/component/_flag";
 @import "object/component/_list-unstyled";
 @import "object/component/_list-ordered";
+@import "object/component/_list-addstyle";
 @import "object/component/_list-mark";
 @import "object/component/_embed";
 @import "object/component/_ratio";
