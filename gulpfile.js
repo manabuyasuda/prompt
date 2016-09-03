@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 // Pug
 var pug = require('gulp-pug');
+var fs = require('fs');
 
 // Sass
 var sass = require('gulp-sass')
@@ -34,6 +35,7 @@ var rimraf = require('rimraf');
  */
 var develop = {
   'pug': ['develop/**/*.pug', '!' + 'develop/**/_*.pug'],
+  'json': 'develop/assets/json/',
   'sass': 'develop/**/*.scss',
   'js': ['develop/**/*.js', '!' + 'develop/assets/js/bundle/**/*.js'],
   'bundleJs': 'develop/assets/js/bundle/**/*.js',
@@ -89,8 +91,8 @@ var AUTOPREFIXER_BROWSERS = [
 gulp.task('pug', function() {
   // JSONファイルの読み込み。
   var locals = {
-    'site': require('./develop/assets/json/site.json'),
-    'data': require('./develop/assets/json/data.json')
+    'site': JSON.parse(fs.readFileSync(develop.json + 'site.json')),
+    'data': JSON.parse(fs.readFileSync(develop.json + 'data.json'))
   }
   return gulp.src(develop.pug)
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
