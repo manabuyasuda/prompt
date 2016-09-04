@@ -66,7 +66,6 @@
  * label...インラインのラベルコンポーネントです。
  * badge...投稿数のような数値を表示するバッジコンポーネントです。
  * box...画像やテキストなどを縦に並べるコンポーネントです。
- * card...カードタイプのコンポーネントです。
  *
  * UTILITY
  * text...テキストのスタイルに関する汎用クラスです。
@@ -205,7 +204,6 @@
 @import "object/project/_label";
 @import "object/project/_badge";
 @import "object/project/_box";
-@import "object/project/_card";
 
 /* -----------------------------------------------------------------------------
    #Utility
