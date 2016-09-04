@@ -22,6 +22,9 @@ var iconfont = require('gulp-iconfont');
 var rename = require("gulp-rename");
 var consolidate = require('gulp-consolidate');
 
+// Styleguide
+var aigis = require('gulp-aigis');
+
 // Utility
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
@@ -197,6 +200,28 @@ gulp.task('iconfont', function() {
     .pipe(gulp.dest(release.iconfontHtml))
   })
   .pipe(gulp.dest(release.iconfontFont));
+});
+
+/**
+ * スタイルガイドを生成します。
+ */
+gulp.task('aigis', function() {
+  return gulp.src('./aigis/aigis_config.yml')
+    .pipe(aigis());
+});
+
+/**
+ * styleguideディレクトリを削除します。
+ */
+gulp.task('clean-styleguide', function (cb) {
+  rimraf('styleguide/', cb);
+});
+
+/**
+ * スタイルガイドを生成します。
+ */
+gulp.task('styleguide', ['clean-styleguide'], function() {
+  runSequence('aigis')
 });
 
 /**

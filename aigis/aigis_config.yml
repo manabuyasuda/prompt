@@ -1,0 +1,28 @@
+# スタイルガイドを生成するもとになるファイルを指定します
+source: ../develop/
+
+# sourceに指定したディレクトリ内の対象とする拡張子を指定します
+source_type: .scss
+
+# スタイルガイドに必要なファイルをコピーします
+dependencies:
+  - ../aigis/aigis_assets/
+  - ../release/assets/css/
+  - ../release/assets/font/
+  - ../release/assets/iconfont/
+  - ../release/assets/js/
+
+# スタイルガイドを出力するディレクトリを指定します
+dest: ../styleguide
+
+# スタイルガイドを生成するためのテンプレートファイルを指定します
+template_dir: ../aigis/template_jade
+
+# スタイルガイドを生成するために利用するテンプレートエンジンを指定します
+template_engine: jade
+
+# スタイルガイドとして出力されたファイルをコンソールに出力します
+log: true
+
+# スタイルガイドの元になったファイルで使用されている色を一覧化します
+color_palette: true

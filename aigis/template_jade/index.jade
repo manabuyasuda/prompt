@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href=root + 'aigis_assets/css/highlight/okadia.css', rel='stylesheet')
+    link(href=root + 'aigis_assets/css/theme.css', rel='stylesheet')
+    link(href=root + 'css/common.css', rel='stylesheet')
+    script(href=root + 'js/jquery-2.2.0.min.js')
+    script(href=root + 'js/bundle/bundle.js')
+    script(href=root + 'js/common.js')
+  body
+    .aigis-container
+      include ./sidemenu
+      .aigis-contents
+        .aigis-contents__body
+          include ./components
+          footer.aigis-footer Last update at #{timestamp}
