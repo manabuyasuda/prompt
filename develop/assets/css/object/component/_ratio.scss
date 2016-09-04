@@ -1,10 +1,9 @@
  /* #Ratio
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: ratio
 name: ratio
-categories: [component]
+category: component
 ---
 
 アスペクト比を固定したまま伸縮させます。デフォルトは1:1になっています。
@@ -18,12 +17,12 @@ Modifierは以下のとおりです。
 
 `.c-ratio__content`には`padding`を指定できないので注意してください。
 
-```block
-<div class="c-ratio c-ratio--16to9">
-  <div class="c-ratio__content">
-    <p></p>
-  </div>
-</div>
+```jade
+div.c-layout.c-layout--medium.c-layout--center
+  div.c-layout__item.u-2of12
+    div.c-ratio
+      div.c-ratio__content(style="background-color: #ddd;")
+        div(style="padding: 1em;") c-ratio
 ```
 */
 .c-ratio {

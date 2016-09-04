@@ -1,30 +1,21 @@
  /* #List-unstyled
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: list-unstyled
 name: list-unstyled
-categories: [component]
+category: component
 ---
 
 `<ul>`と`<ol>`のデフォルトスタイルをリセットします。
 
-```block
-<ul class="c-list-unstyled">
-  <li>リスト1
-  <ul class="c-list-unstyled__items">
-    <li>リスト1.1
-    <ul class="c-list-unstyled__items">
-      <li>リスト1.1.1</li>
-      <li>リスト1.1.2</li>
-    </ul>
-    </li>
-    <li>リスト1.2</li>
-  </ul>
-  </li>
-  <li>リスト2</li>
-  <li>リスト3</li>
-</ul>
+```jade
+div.c-layout__item.u-8of12-md
+  ul.c-list-unstyled
+    li リスト1
+      ul.c-list-unstyled__items
+        li リスト1.1
+          ul.c-list-unstyled__items
+            li リスト1.1
 ```
 */
 /* ul, ol */

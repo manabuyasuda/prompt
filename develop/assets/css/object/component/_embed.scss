@@ -1,10 +1,9 @@
  /* #Embed
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: embed
 name: embed
-categories: [component]
+category: component
 ---
 
 YouTubeなどのエンベディットコンテンツのアクペクト比を指定するオブジェクトです。
@@ -14,10 +13,9 @@ Modifierは以下のとおりです。
 * アスペクト比16:9 `--16to9`
 * アスペクト比4:3 `--4to3`
 
-```block
-<div class="c-embed c-embed--16to9">
+```jade
+div.c-embed.c-embed--16to9.
   <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4" frameborder="0" allowfullscreen></iframe>
-</div>
 ```
 */
 .c-embed {

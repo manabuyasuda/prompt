@@ -1,29 +1,21 @@
  /* #List-ordered
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: list-ordered
 name: list-ordered
-categories: [component]
+category: component
 ---
 
 番号付きリストを入れ子レベルに応じて、1, 1.1のように区切り文字を付け加えます。
 
-```block
-<ol class="c-list-ordered">
-  <li class="c-list-ordered__item">リスト1
-  <ol class="c-list-ordered__items">
-    <li class="c-list-ordered__item">リスト1.1
-    <ol class="c-list-ordered__items">
-      <li class="c-list-ordered__item">リスト1.1.1</li>
-      <li class="c-list-ordered__item">リスト1.1.2</li>
-    </ol>
-    </li class="c-list-ordered__item">
-    <li class="c-list-ordered__item">リスト1.2</li>
-  </ol>
-  </li class="c-list-ordered__item">
-  <li class="c-list-ordered__item">リスト2</li>
-</ol>
+```jade
+ol.c-list-ordered
+  li.c-list-ordered__item リスト1
+    ol.c-list-ordered__items
+      li.c-list-ordered__item リスト1.1
+        ul.c-list-ordered__items
+          li.c-list-ordered__item リスト1.1.1
+          li.c-list-ordered__item リスト1.1.2
 ```
 */
 /* ul */

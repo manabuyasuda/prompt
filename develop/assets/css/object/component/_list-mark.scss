@@ -1,10 +1,9 @@
  /* #List-mark
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: list-mark
 name: list-mark
-categories: [component]
+category: component
 ---
 
 リストアイテムの左にアイコンを配置します。`.p-icon`で任意のアイコンを表示させます。
@@ -15,15 +14,15 @@ categories: [component]
 - `.c-list-mark__icon--small`
 - `.c-list-mark__icon--large`
 
-```block
-<ul class="c-list-mark">
-  <li class="c-list-mark__item"><span class="c-list-mark__icon p-icon p-icon--home" aria-hidden="true"></span>リスト1
-  <ul class="c-list-mark__items">
-    <li class="c-list-mark__item"><span class="c-list-mark__icon c-list-mark__icon--small p-icon p-icon--home" aria-hidden="true"></span>リスト1.1
-    </li>
-    <li class="c-list-mark__item"><span class="c-list-mark__icon"></span>リスト1.2</li>
-  </ul>
-</ul>
+```jade
+ul.c-list-mark
+  li.c-list-mark__item
+    span.c-list-mark__icon.p-icon.p-icon--home(aria-hidden="true")
+    | リスト1
+    ul.c-list-mark__items
+      li.c-list-mark__item
+        span.c-list-mark__icon.p-icon.p-icon--home(aria-hidden="true")
+        | リスト1.1
 ```
 */
 /* ul */

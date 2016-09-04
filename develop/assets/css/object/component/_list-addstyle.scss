@@ -1,29 +1,23 @@
  /* #List-addstyle
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: list-addstyle
 name: list-addstyle
-categories: [component]
+category: component
 ---
 
 行頭に中黒（・）などの記号を入力するリストタイプです。
 デフォルトのリストスタイルはリセットしています。（BEMの）BlockのみでElementはありません。
 
-```block
-<ul class="c-list-addstyle">
-  <li>・リスト1
-    <ul class="c-list-addstyle">
-      <li>・リスト1.1</li>
-      <li>・リスト1.2
-        <ul>
-          <li>リスト1.1.1</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>・リスト2</li>
-</ul>
+```jade
+ul.c-list-addstyle
+  li ・リスト
+    ul.c-list-addstyle
+      li ・リスト1.1
+      li ・リスト1.2
+        ul
+          li リスト1.1.1
+  li ・リスト2
 ```
 */
 .c-list-addstyle {

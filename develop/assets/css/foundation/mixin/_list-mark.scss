@@ -16,4 +16,5 @@
 
 @mixin _c-list-mark__items() {
   @include _c-list-unstyled();
+  margin-left: 1em;
 }

@@ -1,10 +1,9 @@
  /* #Table
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: table
 name: table
-categories: [component]
+category: component
 ---
 
 tableのレイアウトアルゴリズム（`table-layout`）の変更、
@@ -14,21 +13,16 @@ Modifierは以下のとおりです。
 
 * セルの余白を変更 `--small`, `--large`
 
-```block
-<div class="c-wrapper">
-  <table class="c-table c-table--fixed">
-    <tr>
-      <th class="u-percent50">th1</th>
-      <th>th2</th>
-      <th>th3</th>
-    </tr>
-    <tr>
-      <td>td1</td>
-      <td>td2</td>
-      <td>td3</td>
-    </tr>
-  </table>
-</div>
+```jade
+table.c-table.c-table--fixed
+  tr
+    th.u-percent50 th1
+    th th2
+    th th3
+  tr
+    td td1
+    td td2
+    td td3
 ```
 */
 .c-table {

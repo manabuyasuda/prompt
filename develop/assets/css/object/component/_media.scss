@@ -1,10 +1,9 @@
  /* #Media
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: media
 name: media
-categories: [component]
+category: component
 ---
 
 画像とテキストを横並びにするオブジェクトです。
@@ -18,24 +17,16 @@ Modifierは以下のとおりです。
 
 HTMLは画像・テキストの順番で記述して、Modifierでレイアウトを変更します。
 
-```block
-<div class="c-media" style="margin-bottom:1rem;">
-  <div class="c-media__image">
-    <img src="https://placehold.jp/150x150.png">
-  </div>
-  <div class="c-media__body">
-    画像・テキストの順番でマークアップします。
-  </div>
-</div>
+```jade
+div.c-media
+  div.c-media__image
+    img(src="https://placehold.jp/150x150.png")
+  div.c-media__body 画像・テキストの順番でマークアップします。
 
-<div class="c-media c-media--reverse">
-  <div class="c-media__image">
-    <img src="https://placehold.jp/150x150.png">
-  </div>
-  <div class="c-media__body">
-    画像・テキストの順番でマークアップします。<code>.c-media--reverse</code>を指定すると画像が右側になります。
-  </div>
-</div>
+div.c-media.c-media--reverse
+  div.c-media__image
+    img(src="https://placehold.jp/150x150.png")
+  div.c-media__body 画像・テキストの順番でマークアップします。
 ```
 */
 $_media-gutter: $_white-space !default;
