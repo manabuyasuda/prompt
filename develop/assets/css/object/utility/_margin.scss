@@ -1,10 +1,9 @@
  /* #Margin
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: margin
 name: margin
-categories: [utility]
+category: utility
 ---
 
 マージンで余白の管理をします。常に下方向にだけ余白をとります。
@@ -22,18 +21,15 @@ categories: [utility]
 4. `large`
 5. `huge`(optional)
 
-```block
-<div class="u-mb-medium">
-  <p>Lorem ipsum</p>
-</div>
+```jade
+div.u-md-medium
+  p Lorem ipsum dolor sit amet
 
-<div class="u-mb-gain-medium">
-  <p>Lorem ipsum</p>
-</div>
+div.u-md-gain-medium
+  p Lorem ipsum dolor sit amet
 
-<div class="u-mb-lose-medium">
-  <p>Lorem ipsum</p>
-</div>
+div.u-md-lose-medium
+  p Lorem ipsum dolor sit amet
 ```
 */
 /* 常に余白を指定するクラス。 */

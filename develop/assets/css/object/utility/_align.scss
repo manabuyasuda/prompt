@@ -1,20 +1,17 @@
  /* #Align
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: align
 name: align
-categories: [utility]
+category: utility
 ---
 
 画像などを左右や中央に配置します。
 
-```block
-<div class="c-wrapper">
-  <img src="http://lorempixel.com/150/150/">
-  <img src="http://lorempixel.com/150/150/" class="u-align-center">
-  <img src="http://lorempixel.com/150/150/" class="u-align-right">
-</div>
+```jade
+img(src="http://lorempixel.com/150/150/")
+img.u-align-center(src="http://lorempixel.com/150/150/")
+img.u-align-right(src="http://lorempixel.com/150/150/")
 ```
 */
 .u-align-left {

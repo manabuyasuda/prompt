@@ -1,32 +1,24 @@
  /* #Width
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: width
 name: width
-categories: [utility]
+category: utility
 ---
 
 レスポンシブに対応した`width`プロパティを指定する汎用クラスです。
 
 @see - [trumps.width.scss](https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss)
 
-```block
-<div class="c-wrapper">
-  <div class="c-layout c-layout--medium" style="margin-bottom:1rem;">
-    <div class="c-layout__item u-8of12-md"><div style="background-color:lightblue;">c-layout__item u-8of12-md</div></div>
-    <div class="c-layout__item u-4of12-md"><div style="background-color:lightblue;">c-layout__item u-4of12-md</div></div>
-  </div>
+```jade
+div.c-wrapper
+  .c-layout
+    .c-layout__item.u-8of12 u-8of12
+    .c-layout__item.u-4of12 u-4of12
 
-  <div class="c-layout c-layout--rev c-layout--medium" style="margin-bottom:1rem;">
-    <div class="c-layout__item u-8of12-md"><div style="background-color:lightblue;">c-layout--rev c-layout__item u-8of12-md</div></div>
-    <div class="c-layout__item u-4of12-md"><div style="background-color:lightblue;">c-layout--rev c-layout__item u-4of12-md</div></div>
-  </div>
-
-  <div class="c-layout c-layout--center c-layout--medium">
-    <div class="c-layout__item u-8of12-md"><div style="background-color:lightblue;">c-layout--center c-layout__item u-8of12-md</div></div>
-  </div>
-</div>
+  .c-layout
+    .c-layout__item.u-8of12-md u-8of12-md
+    .c-layout__item.u-4of12-md u-4of12-md
 ```
 */
 // @example css - CSS output

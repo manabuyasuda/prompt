@@ -1,29 +1,24 @@
  /* #Percent
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: percent
 name: percent
-categories: [utility]
+category: utility
 ---
 
 `width`プロパティを5%刻みで指定する汎用クラスです。おもに`.c-table--fixed`と一緒に指定します。
 
-```block
-<div class="c-wrapper">
-  <table class="c-table c-table--medium c-table--fixed">
-    <tr>
-      <th class="u-percent50">th1</th>
-      <th>th2</th>
-      <th>th3</th>
-    </tr>
-    <tr>
-      <td>td1</td>
-      <td>td2</td>
-      <td>td3</td>
-    </tr>
-  </table>
-</div>
+```jade
+div.c-wrapper
+  table.c-table.c-table--medium.c-table--fixed
+    tr
+      th.u-percent50 th1
+      th th2
+      th th3
+    tr
+      td td1
+      td td2
+      td td3
 ```
 */
 .u-percent5 { width: percentage(5 / 100) !important; }

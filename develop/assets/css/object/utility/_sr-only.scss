@@ -1,19 +1,17 @@
  /* #Sr-only
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: sr-only
 name: sr-only
-categories: [utility]
+category: utility
 ---
 
 要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
 
-```block
-<div>
-  <span class="p-icon p-icon--rss" aria-hidden="true"></span>
-  <span class="u-sr-only">rss購読</span>
-</div>
+```jade
+div
+  span.p-icon.p-icon--home(aria-hidden="true")
+  span.u-sr-only ホーム
 ```
 */
 .u-sr-only {
