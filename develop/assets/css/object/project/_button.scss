@@ -1,10 +1,9 @@
  /* #Button
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: button
 name: button
-categories: [project]
+category: project
 ---
 
 ボタンコンポーネントです。
@@ -15,15 +14,20 @@ Modifierは以下のとおりです。
 * 真円 `--circle`
 * 楕円 `--pill`, `--pill-right`, `--pill-center`, `--pill-left`
 
-```block
-<p><button class="p-button">p-button</button></p>
-<p><a class="p-button p-button--full">p-button p-button--full</a></p>
+```jade
+p
+  button.p-button(type="button") p-button
 
-<p>
-  <button class="p-button p-button--pill-left">p-button p-button--pill-left</button>
-  <button class="p-button p-button--pill-center">p-button p-button--pill-center</button>
-  <button class="p-button p-button--pill-right">p-button p-button--pill-right</button>
-</p>
+p
+  a.p-button.p-button--full(href="#") p-button p-button--full
+
+ul.c-layout.c-layout--col3
+  li.c-layout__item
+    button.p-button.p-button--pill-left.p-button--full(type="button") p-button--pill-left
+  li.c-layout__item
+    button.p-button.p-button--pill-center.p-button--full(type="button") p-button--pill-center
+  li.c-layout__item
+    button.p-button.p-button--pill-right.p-button--full(type="button") p-button--pill-right
 ```
 */
 $_button-pill-base: 0 !default;

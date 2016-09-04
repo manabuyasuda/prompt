@@ -1,24 +1,20 @@
  /* #Breadcrumb
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: breadcrumb
 name: breadcrumb
-categories: [project]
+category: project
 ---
 
 パンくずリストのコンポーネントです。横幅を超えると、折り返さず省略されます。
 
-```block
-<ol class="p-breadcrumb">
-  <li class="p-breadcrumb__item">
-    <a href="#" class="p-breadcrumb__link">home</a>
-  </li>
-  <li class="p-breadcrumb__item">
-    <a href="#" class="p-breadcrumb__link">page1</a>
-  </li>
-  <li class="p-breadcrumb__item">page2</li>
-</ol>
+```jade
+ul.p-breadcrumb
+  li.p-breadcrumb__item
+    a.p-breadcrumb__link(href="#") home
+  li.p-breadcrumb__item
+    a.p-breadcrumb__link(href="#") page1
+  li.p-breadcrumb__item page2
 ```
 */
 .p-breadcrumb {

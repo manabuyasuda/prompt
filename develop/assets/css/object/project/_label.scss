@@ -1,16 +1,15 @@
  /* #Label
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: label
 name: label
-categories: [project]
+category: project
 ---
 
 インラインでメッセージを表示するコンポーネントです。
 
-```block
-<p><span class="p-label">タグ名</span></p>
+```jade
+p: span.p-label タグ名
 ```
 */
 .p-label {

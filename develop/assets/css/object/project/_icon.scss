@@ -1,10 +1,9 @@
  /* #Icon
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: icon
 name: icon
-categories: [project]
+category: project
 ---
 
 アイコンフォントを使ったアイコンを表示します。デフォルトでは`:before`擬似要素で表示されます。
@@ -17,19 +16,17 @@ categories: [project]
 
 テキストを表示できない場合は`.u-sr-only`でテキストをマークアップします（非表示のままスクリーンリーダーには読み上げられます）。
 
-```block
-<div>
-  <span class="p-icon p-icon--home" aria-hidden="true"></span>ホーム
-</div>
+```jade
+div
+  span.p-icon.p-icon--home(aria-hidden="true")
+  | ホーム
 
-<div>
-  <span class="p-icon p-icon--home" aria-label="ホーム"></span>
-</div>
+div
+  span.p-icon.p-icon--home(aria-label="ホーム")
 
-<div>
-  <span class="p-icon p-icon--home" aria-hidden="true"></span>
-  <span class="u-sr-only">ホーム</span>
-</div>
+div
+  span.p-icon.p-icon--home(aria-hidden="true")
+  span.u-sr-only ホーム
 ```
 */
 @font-face {
