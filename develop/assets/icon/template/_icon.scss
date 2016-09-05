@@ -1,35 +1,28 @@
  /* #Icon
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: icon
 name: icon
-categories: [project]
+category: project
 ---
 
 アイコンフォントを使ったアイコンを表示します。デフォルトでは`:before`擬似要素で表示されます。
 サンプルコードはパンくずリストのホームをアイコンで（2つ目以降はアイコンだけで）示した場合の例です。
 
-装飾的なアイコンは`<span>`と`aria-hidden="true"`でマークアップをします。
+- 装飾的なアイコンは`<span>`と`aria-hidden="true"`でマークアップをします。
+- 意味を伝えたいアイコンは`aria-label=""`でマークアップします。
+- テキスト全体を読み上げたときに違和感が出ないようにします。
+- テキストを表示できない場合は`.u-sr-only`でテキストをマークアップします（非表示のままスクリーンリーダーには読み上げられます）。
 
-意味を伝えたいアイコンは`aria-label=""`でマークアップします。
-テキスト全体を読み上げたときに違和感が出ないようにします。
-
-テキストを表示できない場合は`.u-sr-only`でテキストをマークアップします（非表示のままスクリーンリーダーには読み上げられます）。
-
-```block
-<div>
-  <span class="p-icon p-icon--home" aria-hidden="true"></span>ホーム
-</div>
-
-<div>
-  <span class="p-icon p-icon--home" aria-label="ホーム"></span>
-</div>
-
-<div>
-  <span class="p-icon p-icon--home" aria-hidden="true"></span>
-  <span class="u-sr-only">ホーム</span>
-</div>
+```jade
+div
+  span.p-icon.p-icon--home(aria-hidden="true")
+  | ホーム
+div
+  span.p-icon.p-icon--home(aria-label="ホーム")
+div
+  span.p-icon.p-icon--home(aria-hidden="true")
+  span.u-sr-only ホーム
 ```
 */
 @font-face {

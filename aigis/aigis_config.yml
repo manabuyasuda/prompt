@@ -8,12 +8,12 @@ source_type: .scss
 dependencies:
   - ../aigis/aigis_assets/
   - ../release/assets/css/
+  - ../release/assets/js/
   - ../release/assets/font/
   - ../release/assets/iconfont/
-  - ../release/assets/js/
 
 # スタイルガイドを出力するディレクトリを指定します
-dest: ../styleguide
+dest: ../release/styleguide
 
 # スタイルガイドを生成するためのテンプレートファイルを指定します
 template_dir: ../aigis/template_jade

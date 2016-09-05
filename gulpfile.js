@@ -67,8 +67,8 @@ var release = {
 var public = {
   'root': 'htdocs/',
   'image': ['htdocs/**/*.{png,jpg,gif,svg}', '!' + 'htdocs/assets/icon/*.svg', '!' + 'htdocs/assets/font/*.svg'],
-  'css': 'htdocs/**/*.css',
-  'js': 'htdocs/**/*.js'
+  'css': ['htdocs/**/*.css', '!' + 'htdocs/styleguide/**/*.css'],
+  'js': ['htdocs/**/*.js', '!' + 'htdocs/styleguide/**/*.js']
 }
 
 var AUTOPREFIXER_BROWSERS = [
@@ -214,14 +214,24 @@ gulp.task('aigis', function() {
  * styleguideディレクトリを削除します。
  */
 gulp.task('clean-styleguide', function (cb) {
-  rimraf('styleguide/', cb);
+  rimraf('release/styleguide/', cb);
+});
+
+/**
+ * releaseディレクトリの不要なiconfontディレクトリを削除します。
+ */
+gulp.task('clean-release-iconfont', function (cb) {
+  rimraf('release/assets/iconfont/', cb);
 });
 
 /**
  * スタイルガイドを生成します。
  */
 gulp.task('styleguide', ['clean-styleguide'], function() {
-  runSequence('aigis')
+  runSequence(
+    'aigis',
+    'clean-release-iconfont'
+  )
 });
 
 /**
