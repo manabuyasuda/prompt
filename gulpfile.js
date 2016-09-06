@@ -38,7 +38,7 @@ var rimraf = require('rimraf');
  */
 var develop = {
   'pug': ['develop/**/*.pug', '!' + 'develop/**/_*.pug'],
-  'json': 'develop/assets/json/',
+  'json': 'develop/_data/',
   'sass': 'develop/**/*.scss',
   'js': ['develop/**/*.js', '!' + 'develop/assets/js/bundle/**/*.js'],
   'bundleJs': 'develop/assets/js/bundle/**/*.js',
