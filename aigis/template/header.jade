@@ -1,0 +1,13 @@
+header.aigis-header
+  nav.aigis-main-nav
+    ul.aigis-nav
+      li.aigis-nav__item
+        a.aigis-nav__link(href=root + 'index.html') index
+      each cat in config.collection.category
+        li.aigis-nav__item
+          a.aigis-nav__link(href=root + 'category/' + cat + '/index.html') #{cat}
+      li.aigis-nav__item
+        a.aigis-nav__link(href=root + 'color.html') All Colors
+      li.aigis-nav__item
+        a.aigis-nav__link(href=root + 'iconfont/iconfont.html') Iconfont
+

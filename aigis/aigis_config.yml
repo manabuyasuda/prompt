@@ -6,17 +6,17 @@ source_type: .scss
 
 # スタイルガイドに必要なファイルをコピーします
 dependencies:
-  - ../aigis/aigis_assets/
+  - ../aigis/assets/
   - ../release/assets/css/
   - ../release/assets/js/
   - ../release/assets/font/
   - ../release/assets/iconfont/
 
 # スタイルガイドを出力するディレクトリを指定します
-dest: ../release/styleguide
+dest: ../release/styleguide/
 
 # スタイルガイドを生成するためのテンプレートファイルを指定します
-template_dir: ../aigis/template_jade
+template_dir: ../aigis/template/
 
 # スタイルガイドを生成するために利用するテンプレートエンジンを指定します
 template_engine: jade
