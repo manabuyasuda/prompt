@@ -1,9 +1,14 @@
 extend /_includes/_layout
 append variables
+  //- Required
   - var pageTitle= "アバウトページ";
   - var pageDescription= "アバウトページの説明";
   - var pageKeywords= "about, page";
-  - var pageOgpTitle= "アバウトページ";
-  - var pageOgpImage= site.ogpImage; // 共通画像を使わない場合は変更する
+  - var pageUrl= "about.html";
+  //- Optional
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= site.ogpImage;
+  - var pageLang= "ja";
+  - var pageOgpType= "article";
 
 block content

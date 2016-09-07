@@ -1,8 +1,7 @@
 block variables
-- var pageOgpType = "article";
 doctype html
-html(lang="ja")
-  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
+html(lang=pageLang)
+  head(prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#' + pageOgpType + ': http://ogp.me/ns/' + pageOgpType + '#')
     include /_includes/_meta
 
   body
