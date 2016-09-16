@@ -36,7 +36,9 @@ div
   font-style: normal;
 }
 
-.<%= className %> {
+.<%= className %> { display: inline-block; }
+
+.<%= className %>:before {
   display: inline-block;
   font-family: "<%= fontName %>";
   -webkit-font-smoothing: antialiased;

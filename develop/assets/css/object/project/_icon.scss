@@ -36,7 +36,9 @@ div
   font-style: normal;
 }
 
-.p-icon {
+.p-icon { display: inline-block; }
+
+.p-icon:before {
   display: inline-block;
   font-family: "icon";
   -webkit-font-smoothing: antialiased;
