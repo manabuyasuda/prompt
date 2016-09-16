@@ -1,0 +1,75 @@
+ /* #List-mark
+   -------------------------------------------------------------------------- */
+/*
+---
+name: list-mark
+category: project
+---
+
+リストアイテムの左にアイコンを配置します。`.p-icon`で任意のアイコンを表示させます。
+中黒（・）や米印（※）などにも使えます。
+複数行になった場合はテキストの位置で左揃えになります。
+
+アイコンのサイズは以下のmodifierで変更できます。
+
+- `.p-list-mark__icon--small`
+- `.p-list-mark__icon--large`
+
+```jade
+ul.p-list-mark
+  li.p-list-mark__item
+    span.p-list-mark__icon.p-icon.p-icon--home(aria-hidden="true")
+    | リスト1
+    ul.p-list-mark__items
+      li.p-list-mark__item
+        span.p-list-mark__icon.p-list-mark__icon--large.p-icon.p-icon--home(aria-hidden="true")
+        | リスト1.1
+
+ul.p-list-mark
+  li.p-list-mark__item
+    span.p-list-mark__icon ・
+    | リスト1
+    ul.p-list-mark__items
+      li.p-list-mark__item
+        span.p-list-mark__icon ・
+        | リスト1.1
+```
+*/
+/* ul */
+.p-list-mark {
+  @include _p-list-mark();
+}
+
+/* ul > li */
+.p-list-mark__item {
+  @include _p-list-mark__item();
+}
+
+/* li > span */
+.p-list-mark__icon {
+  @include _p-list-mark__icon();
+}
+
+/* li > span */
+.p-list-mark__iconleft {
+  @include _p-list-mark__icon();
+  padding-right: 0.25em;
+}
+
+/* li > ul */
+.p-list-mark__items {
+  @include _p-list-mark__items();
+  margin-left: 1em;
+}
+
+.p-list-mark__icon--small {
+  &:before {
+    font-size: 0.8em;
+  }
+}
+
+.p-list-mark__icon--large {
+  &:before {
+    font-size: 1.2em;
+  }
+}
