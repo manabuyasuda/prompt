@@ -1,0 +1,50 @@
+ /* #List-note
+   -------------------------------------------------------------------------- */
+/*
+---
+name: list-note
+category: component
+---
+
+リストアイテムの左に注釈用の記号を表示します。
+lang属性が`js`の場合は※、`en_US`の場合は*が表示されます。
+複数行になった場合はテキストの位置で左揃えになります。
+
+```jade
+ul.c-list-note(lang="ja")
+  li.c-list-note__item
+    | リスト1
+    ul.c-list-note__items
+      li.c-list-note__item
+        | リスト1.1
+
+ul.c-list-note(lang="en_US")
+  li.c-list-note__item
+    | List1
+    ul.c-list-note__items
+      li.c-list-note__item
+        | List1.1
+```
+*/
+.c-list-note {
+  display: table;
+  @include _c-list-unstyled();
+}
+
+.c-list-note__item {
+  display: table-row;
+  &:before {
+    display: table-cell;
+  }
+  [lang="ja"] &:before {
+    content: "※";
+  }
+  [lang="en_US"] &:before {
+    content: "*";
+  }
+}
+
+.c-list-note__items {
+  margin-left: 1em;
+  @include _c-list-unstyled();
+}
