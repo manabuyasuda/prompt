@@ -74,6 +74,7 @@
  * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
  * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
  * width...おもにグリッドで使用する`width`を指定する汎用クラスです。
+ * push...おもにグリッドで使用する`margin-left`を指定する汎用クラスです。
  * offset...おもにグリッドで使用する`margin-right`を指定する汎用クラスです。
  * percent...`width`プロパティを5%刻みで指定する汎用クラスです。
  * display...要素の表示や改行をコントロールする場合に使用します。
@@ -236,6 +237,7 @@
 @import "object/utility/_margin";
 @import "object/utility/_display";
 @import "object/utility/_width";
+@import "object/utility/_push";
 @import "object/utility/_offset";
 @import "object/utility/_percent";
 @import "object/utility/_sr-only";
