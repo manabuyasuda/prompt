@@ -51,6 +51,7 @@
  * list-ordered...番号付きリストを入れ子レベルに応じて、1, 1.1のように区切り文字を付け加えます。
  * list-note...リストアイテムの左に注釈用の記号を表示します。
  * embed...Youtubeなどをアスペクト比を固定してレスポンシブ対応させる場合に使用します。
+ * list-inline...ボタンやラベル、テキストリンクなどを横並びにします。
  * media...画像とテキストが横並びになるオブジェクトです。テキストを画像に回り込みさせます。
  * flag...画像とテキストが横並びになるオブジェクトです。縦方向の指定ができます。
  * table...tableのレイアウトアルゴリズムの変更、余白の変更をします。
@@ -189,6 +190,7 @@
 @import "object/component/_list-note";
 @import "object/component/_embed";
 // Medium block
+@import "object/component/_list-inline";
 @import "object/component/_media";
 @import "object/component/_flag";
 @import "object/component/_table";
