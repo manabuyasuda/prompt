@@ -85,13 +85,13 @@ $_layout-gutter-large: ($_layout-gutter * 2) !default;
 /**
  * 垂直位置を2つのパリエーションから選択します（デフォルトは`top`）。
  */
-.c-layout--middle {
+@include _responsive('.c-layout--middle') {
   > .c-layout__item {
     vertical-align: middle;
   }
 }
 
-.c-layout--bottom {
+@include _responsive('.c-layout--bottom') {
   > .c-layout__item {
     vertical-align: bottom;
   }
@@ -100,7 +100,7 @@ $_layout-gutter-large: ($_layout-gutter * 2) !default;
 /**
  * 要素を中央配置にします（デフォルトは`left`）。
  */
-.c-layout--center {
+@include _responsive('.c-layout--center') {
   text-align: center;
   > .c-layout__item {
     text-align: left;
@@ -110,7 +110,7 @@ $_layout-gutter-large: ($_layout-gutter * 2) !default;
 /**
  * 要素を右端寄せにします（デフォルトは`left`）。
  */
-.c-layout--right {
+@include _responsive('.c-layout--right') {
   text-align: right;
   > .c-layout__item {
     text-align: left;
