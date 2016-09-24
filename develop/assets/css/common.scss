@@ -43,7 +43,6 @@
  * main...`<main>`タグのスタイルです。
  * content...`<article>`タグが使われるようなメインコンテンツのスタイルです。
  * sidebar...`<aside>`タグが使われるようなサイドバーのスタイルです。
- * section...`<section>`要素を使うようなセクションの余白を管理します。
  *
  * COMPONENT
  * list-unstyled...`<ul>`と`<ol>`でデフォルトスタイルをリセットします。
@@ -73,13 +72,14 @@
  * text...テキストのスタイルに関する汎用クラスです。
  * heading...見出しの汎用スタイルです。
  * align...画像などを中央や右側に配置します。
+ * display...要素の表示や改行をコントロールする場合に使用します。
  * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
- * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
  * width...おもにグリッドで使用する`width`を指定する汎用クラスです。
  * push...おもにグリッドで使用する`margin-left`を指定する汎用クラスです。
  * offset...おもにグリッドで使用する`margin-right`を指定する汎用クラスです。
  * percent...`width`プロパティを5%刻みで指定する汎用クラスです。
- * display...要素の表示や改行をコントロールする場合に使用します。
+ * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
+ * section...`<section>`要素を使うようなセクションの余白を管理します。
  *
  * SCOPE
  * blog...ブログページのスタイルです。
@@ -156,7 +156,6 @@
 @import "layout/_main";
 @import "layout/_content";
 @import "layout/_sidebar";
-@import "layout/_section";
 
 /* =============================================================================
    #Object
@@ -235,16 +234,19 @@
  * 確実にスタイルを適応させるために`!important`を使用します。
  * プレフィックス（接頭辞）として`u-`をつけます。
  */
+// Small block
 @import "object/utility/_text";
 @import "object/utility/_heading";
 @import "object/utility/_align";
-@import "object/utility/_margin";
 @import "object/utility/_display";
+@import "object/utility/_sr-only";
+// Medium block
 @import "object/utility/_width";
 @import "object/utility/_push";
 @import "object/utility/_offset";
 @import "object/utility/_percent";
-@import "object/utility/_sr-only";
+@import "object/utility/_margin";
+@import "object/utility/_section";
 
 /* =============================================================================
    #Scope
