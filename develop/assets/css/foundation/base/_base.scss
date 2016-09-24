@@ -29,7 +29,7 @@ html {
 
 body {
   color: $_color-text;
-  font-family: $_font-family-sans-serif-1;
+  font-family: $_font-family-sans-serif-5;
   font-weight: $_font-weight-normal;
   /* アンチエイリアスを指定する */
   -webkit-font-smoothing: subpixel-antialiased;
@@ -54,7 +54,7 @@ h5 {}
 h6 {}
 
 ul, ol {
-  padding-left: 1em;
+  padding-left: 1.5rem;
 }
 /**
  * ネストされたリストのマージンをリセットします。
@@ -113,12 +113,14 @@ img {
 /**
  * 日本語では斜体を使用しないためリセットします。
  */
-i,
-cite,
-em,
-address,
-dfn {
-  font-style: normal;
+[lang="ja"] {
+  i,
+  cite,
+  em,
+  address,
+  dfn {
+    font-style: normal;
+  }
 }
 
 code,
