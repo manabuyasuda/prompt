@@ -128,7 +128,6 @@
 @import "foundation/mixin/_media";
 @import "foundation/mixin/_flag";
 @import "foundation/mixin/_ratio";
-@import "foundation/mixin/_box";
 // Large block
 @import "foundation/mixin/_layout";
 
@@ -214,13 +213,11 @@
 // Small block
 @import "object/project/_icon";
 @import "object/project/_icon-extend";
-@import "object/project/_badge";
 @import "object/project/_label";
 @import "object/project/_button";
 // Medium block
 @import "object/project/_breadcrumb";
 @import "object/project/_list-mark";
-@import "object/project/_box";
 // Large block
 
 /* -----------------------------------------------------------------------------
