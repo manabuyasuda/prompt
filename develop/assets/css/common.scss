@@ -71,6 +71,7 @@
  *
  * UTILITY
  * text...テキストのスタイルに関する汎用クラスです。
+ * heading...見出しの汎用スタイルです。
  * align...画像などを中央や右側に配置します。
  * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
  * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
@@ -235,6 +236,7 @@
  * プレフィックス（接頭辞）として`u-`をつけます。
  */
 @import "object/utility/_text";
+@import "object/utility/_heading";
 @import "object/utility/_align";
 @import "object/utility/_margin";
 @import "object/utility/_display";
