@@ -1,4 +1,4 @@
-@mixin _c-ratio($padding-bottom: 100%) {
+@mixin _ratio($padding-bottom: 100%) {
   display: block;
   overflow: hidden;
   position: relative;
@@ -10,7 +10,7 @@
   }
 }
 
-@mixin _c-ratio__content() {
+@mixin _ratio__content() {
   position: absolute;
   top: 0;
   bottom: 0;

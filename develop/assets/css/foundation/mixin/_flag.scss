@@ -1,4 +1,4 @@
-@mixin _c-flag() {
+@mixin _flag() {
   display: table;
   width: 100%;
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 // @param $gutter - 画像とテキストの間の余白を指定します。
-@mixin _c-flag__image($gutter) {
+@mixin _flag__image($gutter) {
   display: table-cell;
   width: 1px;
   margin: 0;
@@ -18,7 +18,7 @@
   }
 }
 
-@mixin _c-flag__body() {
+@mixin _flag__body() {
   display: table-cell;
   width: auto;
   margin: 0;

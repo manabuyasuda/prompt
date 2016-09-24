@@ -37,28 +37,28 @@ ul.p-list-mark
 */
 /* ul */
 .p-list-mark {
-  @include _p-list-mark();
+  @include _list-mark();
 }
 
 /* ul > li */
 .p-list-mark__item {
-  @include _p-list-mark__item();
+  @include _list-mark__item();
 }
 
 /* li > span */
 .p-list-mark__icon {
-  @include _p-list-mark__icon();
+  @include _list-mark__icon();
 }
 
 /* li > span */
 .p-list-mark__iconleft {
-  @include _p-list-mark__icon();
+  @include _list-mark__icon();
   padding-right: 0.25em;
 }
 
 /* li > ul */
 .p-list-mark__items {
-  @include _p-list-mark__items();
+  @include _list-mark__items();
   margin-left: 1em;
 }
 

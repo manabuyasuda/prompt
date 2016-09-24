@@ -34,15 +34,15 @@ $_media-gutter-small: ($_media-gutter / 2) !default;
 $_media-gutter-large: ($_media-gutter * 2) !default;
 
 .c-media {
-  @include _c-media();
+  @include _media();
 }
 
 .c-media__image {
-  @include _c-media__image($_media-gutter);
+  @include _media__image($_media-gutter);
 }
 
 .c-media__body {
-  @include _c-media__body();
+  @include _media__body();
 }
 
 /**

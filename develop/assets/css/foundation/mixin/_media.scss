@@ -1,4 +1,4 @@
-@mixin _c-media() {
+@mixin _media() {
   display: block;
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 }
 
 // @param $gutter - 画像とテキストの間の余白を指定します。
-@mixin _c-media__image($gutter) {
+@mixin _media__image($gutter) {
   float: left;
   margin: 0;
   margin-right: $gutter;
@@ -17,7 +17,7 @@
 }
 
 // @param $overflow(null) - テキストを画像に回り込みさせる場合は`hidden`を指定します。
-@mixin _c-media__body($overflow: null) {
+@mixin _media__body($overflow: null) {
   display: block;
   margin: 0;
   padding: 0;

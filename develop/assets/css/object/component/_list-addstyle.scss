@@ -21,7 +21,7 @@ ul.c-list-addstyle
 ```
 */
 .c-list-addstyle {
-  @include _c-list-unstyled();
+  @include _list-unstyled();
   margin-left: 1em;
   text-indent: -1em;
   list-style-position: inside;

@@ -51,11 +51,11 @@ $_layout-gutter-small: ($_layout-gutter / 2) !default;
 $_layout-gutter-large: ($_layout-gutter * 2) !default;
 
 .c-layout {
-  @include _c-layout();
+  @include _layout();
 }
 
 .c-layout__item {
-  @include _c-layout__item();
+  @include _layout__item();
 }
 
 /**

@@ -28,7 +28,7 @@ ul.c-list-note(lang="en_US")
 */
 .c-list-note {
   display: table;
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }
 
 .c-list-note__item {
@@ -46,5 +46,5 @@ ul.c-list-note(lang="en_US")
 
 .c-list-note__items {
   margin-left: 1em;
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }
