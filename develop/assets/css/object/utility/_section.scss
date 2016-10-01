@@ -29,9 +29,11 @@ section.u-section-small
 ```
 */
 .u-section {
-  margin-bottom: 3.4rem;
+  margin-bottom: 3.4rem !important;
 }
 
-.u-section-small {}
+.u-section-small {
+  margin-bottom: 1.7rem !important;
+}
 
 .u-section-large {}
