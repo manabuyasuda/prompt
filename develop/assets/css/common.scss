@@ -79,6 +79,8 @@
  * section...`<section>`要素を使うようなセクションの余白を管理します。
  *
  * SCOPE
+ * element...BEMにおけるElementの余白を一括で指定します。
+ * block...BEMにおけるBloclの余白を一括で指定します。
  * blog...ブログページのスタイルです。
  */
 
@@ -255,4 +257,6 @@
  * ProjectレイヤーやUtilityレイヤーでまとめられないか検討しましょう。
  * プレフィックス（接頭辞）として`s-`をつけます。
  */
+@import "scope/_element";
+@import "scope/_block";
 @import "scope/_blog";
