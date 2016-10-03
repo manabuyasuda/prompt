@@ -101,6 +101,10 @@ img {
   vertical-align: middle;
 }
 
+figure {
+  margin: 0;
+}
+
 /**
  * IEでSVGがフルードイメージにならない不具合があります。
  * 属性値が`.svg`で終わる要素に適応します。
