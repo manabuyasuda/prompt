@@ -1,0 +1,18 @@
+ /* #Heading
+   -------------------------------------------------------------------------- */
+/*
+---
+name: heading
+category: utility
+---
+
+見出しの汎用スタイルです。
+
+```jade
+h2.u-heading-main メインの見出し
+h3.u-heading-sub サブの見出し
+```
+*/
+.u-heading-main {}
+
+.u-heading-sub {}

@@ -1,0 +1,39 @@
+ /* #Section
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: section
+category: utility
+---
+
+`<section>`タグを使うようなセクションの余白（`margin`）を管理します。
+
+サイズはデフォルトで3つ、最大で5つとします。
+
+1. tiny(optional)
+2. small
+3. medium(default)
+4. large
+5. huge(optional)
+
+
+```block
+section.u-section
+  h2 見出し
+
+section.u-section-large
+  h2 見出し
+
+section.u-section-small
+  h3 見出し
+```
+*/
+.u-section {
+  margin-bottom: 3.4rem !important;
+}
+
+.u-section-small {
+  margin-bottom: 1.7rem !important;
+}
+
+.u-section-large {}

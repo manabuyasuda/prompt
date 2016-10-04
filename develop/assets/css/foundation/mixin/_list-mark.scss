@@ -1,20 +1,16 @@
-@mixin _c-list-mark() {
+@mixin _list-mark() {
   display: table;
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }
 
-@mixin _c-list-mark__item() {
+@mixin _list-mark__item() {
   display: table-row;
 }
 
-@mixin _c-list-mark__icon($padding-right: 0.25em) {
+@mixin _list-mark__icon() {
   display: table-cell;
-  width: 1em;
-  padding-right: $padding-right;
-  text-align: center;
 }
 
-@mixin _c-list-mark__items() {
-  @include _c-list-unstyled();
-  margin-left: 1em;
+@mixin _list-mark__items() {
+  @include _list-unstyled();
 }

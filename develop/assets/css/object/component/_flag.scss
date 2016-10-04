@@ -47,15 +47,15 @@ $_flag-gutter-small: ($_flag-gutter / 2) !default;
 $_flag-gutter-large: ($_flag-gutter * 2) !default;
 
 .c-flag {
-  @include _c-flag();
+  @include _flag();
 }
 
 .c-flag__image {
-  @include _c-flag__image($_flag-gutter);
+  @include _flag__image($_flag-gutter);
 }
 
 .c-flag__body {
-  @include _c-flag__body();
+  @include _flag__body();
 }
 
 

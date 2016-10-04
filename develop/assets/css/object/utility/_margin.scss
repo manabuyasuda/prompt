@@ -7,7 +7,7 @@ category: utility
 ---
 
 マージンで余白の管理をします。常に下方向にだけ余白をとります。
-`<section>`要素を使うようなセクションの余白はlayout/_section.scssで管理します。
+`<section>`要素を使うようなセクションの余白はobject/utility/_section.scssで管理します。
 
 * `.u-mb`は常に余白をとります。
 * `.u-mb-gain`はあるブレイクポイント以上で余白を指定します。
@@ -17,7 +17,7 @@ category: utility
 
 1. `tiny`(optional)
 2. `small`
-3. `medium`
+3. `medium`(default)
 4. `large`
 5. `huge`(optional)
 

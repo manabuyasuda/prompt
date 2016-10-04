@@ -3,6 +3,8 @@ var gulp = require('gulp');
 // Pug
 var pug = require('gulp-pug');
 var fs = require('fs');
+var data = require('gulp-data');
+var path = require('path');
 
 // Sass
 var sass = require('gulp-sass')
@@ -38,7 +40,7 @@ var rimraf = require('rimraf');
  */
 var develop = {
   'pug': ['develop/**/*.pug', '!' + 'develop/**/_*.pug'],
-  'json': 'develop/assets/json/',
+  'json': 'develop/_data/',
   'sass': 'develop/**/*.scss',
   'js': ['develop/**/*.js', '!' + 'develop/assets/js/bundle/**/*.js'],
   'bundleJs': 'develop/assets/js/bundle/**/*.js',
@@ -99,6 +101,11 @@ gulp.task('pug', function() {
   }
   return gulp.src(develop.pug)
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+  .pipe(data(function(file) {
+    // 各ページごとの`/`を除いたルート相対パスを取得します。
+    locals.relativePath = path.relative(file.base, file.path.replace(/.pug$/, '.html'));
+      return locals;
+  }))
   .pipe(pug({
     // JSONファイルをPugに渡します。
     locals: locals,

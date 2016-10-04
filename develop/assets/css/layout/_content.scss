@@ -13,12 +13,19 @@ categories: [layout]
 
 ```block
 <body>
-  <article class="l-content s-blog">
-    <header class="l-content__lead"></header>
-  </article>
+  <div class="l-content">
+    <article class="l-content s-blog">
+      <div class="l-content__item">
+      </div>
+    </article>
+  </div>
 </body>
 ```
 */
 .l-content {
 
+}
+
+.l-content__item {
+  padding: 0 1em;
 }

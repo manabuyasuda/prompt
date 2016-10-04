@@ -15,11 +15,14 @@ p: span.p-label タグ名
 .p-label {
   display: inline-block;
   padding: 0.5em;
-  // border-radius: $_radius;
   color: $_color-ui-bg;
   font-size: $_font-size--small;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
+  text-decoration: none;
   background-color: $_color-link;
+  @include _on-event() {
+    text-decoration: none;
+  }
 }

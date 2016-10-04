@@ -21,7 +21,7 @@ ol.c-list-ordered
 /* ul */
 .c-list-ordered {
   display: table;
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }
 
 /* ul > li */
@@ -40,5 +40,5 @@ ol.c-list-ordered
 /* li > ul */
 .c-list-ordered__items {
   counter-reset: ordered;
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }

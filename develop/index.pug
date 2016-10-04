@@ -1,14 +1,15 @@
-extend /assets/pug/_layout-index
+extend /_includes/_layout
 append variables
-  - var pageTitle= site.name;
+  //- Required
+  - var pageTitle= "";
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
-  - var pageOgpTitle= pageTitle;
-  - var pageOgpImage= site.ogpImage; // 共通画像を使わない場合は変更する
-
-block append css
-  //- link(rel="stylesheet" href="css/style.css")
-block append js
-  //- script(src="js/single.js")
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
 
 block content

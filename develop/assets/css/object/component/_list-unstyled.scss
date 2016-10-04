@@ -20,7 +20,7 @@ div.c-layout__item.u-8of12-md
 */
 /* ul, ol */
 .c-list-unstyled {
-  @include _c-list-unstyled();
+  @include _list-unstyled();
 }
 
 /* li > ul, li > ol */

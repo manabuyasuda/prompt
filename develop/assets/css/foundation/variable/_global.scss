@@ -1,5 +1,5 @@
 // default breakpoint
-$_default-breakpoint: 'md';
+$_default-breakpoint: 'md' !default;
 
 // default wrapper width
 $_max-width: 960px !default;
@@ -17,9 +17,9 @@ $_font-size--large: 16px !default;
 $_font-size--small: 0.8em !default;
 
 // base font-weight
-$_font-weight-light: 300;
-$_font-weight-normal: 400;
-$_font-weight-bold: 600;
+$_font-weight-light: 300 !default;
+$_font-weight-normal: 400 !default;
+$_font-weight-bold: 600 !default;
 
 // base Rounded corners
 $_radius: 3px !default;

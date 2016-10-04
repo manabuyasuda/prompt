@@ -22,16 +22,15 @@
  * mq-up...メディアクエリを`min-width`で挿入します。
  * mq-down...メディアクエリを`max-width`で挿入します。
  * responsive...レスポンシブ対応クラスを生成します。
- * clearfix...floatの解除をします。
  * on-event...:hover, :active, :focusをまとめて指定します。
+ * clearfix...floatの解除をします。
  * sr-only...非表示にしてスクリーンリーダーにだけ読み上げさせます。
- * layout...layoutオブジェクトのベーススタイルです。
- * media...mediaオブジェクトのベーススタイルです。
- * flag...flagオブジェクトのベーススタイルです。
  * list-unstyled...list-unstyledオブジェクトのベーススタイルです。
  * list-mark...list-markオブジェクトのベーススタイルです。
+ * media...mediaオブジェクトのベーススタイルです。
+ * flag...flagオブジェクトのベーススタイルです。
  * ratio...ratioオブジェクトのベーススタイルです。
- * box...boxオブジェクトのベーススタイルです。
+ * layout...layoutオブジェクトのベーススタイルです。
  *
  * BASE
  * normalize...Normalize.cssをインポートしています。
@@ -43,42 +42,47 @@
  * main...`<main>`タグのスタイルです。
  * content...`<article>`タグが使われるようなメインコンテンツのスタイルです。
  * sidebar...`<aside>`タグが使われるようなサイドバーのスタイルです。
- * section...`<section>`要素を使うようなセクションの余白を管理します。
  *
  * COMPONENT
- * wrapper...最大幅を指定します。
- * layout...汎用的なレイアウトオブジェクトです。グリッドレイアウトなどに使用できます。
+ * list-unstyled...`<ul>`と`<ol>`でデフォルトスタイルをリセットします。
+ * list-addstyle...行頭に中黒（・）などの記号を入力するリストタイプです。
+ * list-ordered...番号付きリストを入れ子レベルに応じて、1, 1.1のように区切り文字を付け加えます。
+ * list-note...リストアイテムの左に注釈用の記号を表示します。
+ * embed...Youtubeなどをアスペクト比を固定してレスポンシブ対応させる場合に使用します。
+ * block...画像とテキストをblock（縦）に配置します。
+ * list-inline...ボタンやラベル、テキストリンクなどを横並びにします。
  * media...画像とテキストが横並びになるオブジェクトです。テキストを画像に回り込みさせます。
  * flag...画像とテキストが横並びになるオブジェクトです。縦方向の指定ができます。
- * list-unstyled...`<ul>`と`<ol>`でデフォルトスタイルをリセットします。
- * list-ordered...番号付きリストを入れ子レベルに応じて、1, 1.1のように区切り文字を付け加えます。
- * list-addstyle...行頭に中黒（・）などの記号を入力するリストタイプです。
- * list-mark...リストアイテムの左にアイコンを配置します。
- * embed...Youtubeなどをアスペクト比を固定してレスポンシブ対応させる場合に使用します。
- * ratio...アスペクト比を固定したまま伸縮させます。
  * table...tableのレイアウトアルゴリズムの変更、余白の変更をします。
+ * ratio...アスペクト比を固定したまま伸縮させます。
+ * layout...汎用的なレイアウトオブジェクトです。グリッドレイアウトなどに使用できます。
+ * wrapper...最大幅を指定します。
  *
  * PROJECT
  * icon...アイコンフォントです。テンプレートから自動で生成されます。
  * icon-extend...アイコンフォントを拡張するModifierです。
+ * label...インラインのラベルコンポーネントです。
  * button...ボタンコンポーネントです。
  * breadcrumb...パンくずリストコンポーネントです。
- * label...インラインのラベルコンポーネントです。
- * badge...投稿数のような数値を表示するバッジコンポーネントです。
- * box...画像やテキストなどを縦に並べるコンポーネントです。
+ * list-mark...リストアイテムの左にアイコンを配置します。
+ *
+ * SCOPE
+ * element...BEMにおけるElementの余白を一括で指定します。
+ * block...BEMにおけるBloclの余白を一括で指定します。
+ * blog...ブログページのスタイルです。
  *
  * UTILITY
  * text...テキストのスタイルに関する汎用クラスです。
+ * heading...見出しの汎用スタイルです。
  * align...画像などを中央や右側に配置します。
- * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
  * display...要素の表示や改行をコントロールする場合に使用します。
+ * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
  * width...おもにグリッドで使用する`width`を指定する汎用クラスです。
+ * push...おもにグリッドで使用する`margin-left`を指定する汎用クラスです。
  * offset...おもにグリッドで使用する`margin-right`を指定する汎用クラスです。
  * percent...`width`プロパティを5%刻みで指定する汎用クラスです。
- * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
- *
- * SCOPE
- * blog...ブログページのスタイルです。
+ * margin...マージンで余白の管理をします。常に下方向にだけ余白をとります。
+ * section...`<section>`要素を使うようなセクションの余白を管理します。
  */
 
 /**
@@ -93,7 +97,7 @@
 //
 // Sassの変数と関数を定義します。
 // 変数は用途ごとにモジュール化、関数は機能ごとにモジュール化をします。
-// 後述するComponentレイヤーのスタイルは@mixinとして定義することを推奨します。
+// 後述するレイヤーの汎用的なスタイルは@mixinとして定義することを推奨します。
 // プレフィックス（接頭辞）として`_`をつけます。
 //
 @import "foundation/variable/_global";
@@ -114,16 +118,18 @@
 @import "foundation/mixin/_mq-up";
 @import "foundation/mixin/_mq-down";
 @import "foundation/mixin/_responsive";
-@import "foundation/mixin/_clearfix";
 @import "foundation/mixin/_on-event";
+// Small block
+@import "foundation/mixin/_clearfix";
 @import "foundation/mixin/_sr-only";
-@import "foundation/mixin/_layout";
+@import "foundation/mixin/_list-unstyled";
+// Medium block
+@import "foundation/mixin/_list-mark";
 @import "foundation/mixin/_media";
 @import "foundation/mixin/_flag";
-@import "foundation/mixin/_list-unstyled";
-@import "foundation/mixin/_list-mark";
 @import "foundation/mixin/_ratio";
-@import "foundation/mixin/_box";
+// Large block
+@import "foundation/mixin/_layout";
 
 /**
  * Foundationレイヤーでは`html`や`body`のような広範囲にわたるベーススタイル、
@@ -149,18 +155,23 @@
 @import "layout/_main";
 @import "layout/_content";
 @import "layout/_sidebar";
-@import "layout/_section";
 
 /* =============================================================================
    #Object
    ========================================================================== */
 /**
  * Objectレイヤーはプロジェクトにおけるビジュアルパターンです。抽象度や詳細度、
- * 拡張性などによって、3つのレイヤーにわけられます。
+ * 拡張性などによって、4つのレイヤーにわけられます。
  * それぞれのレイヤーにはプレフィックス（接頭辞）をつけます。
  * 1. Component（`c-`）
  * 2. Project（`p-`）
- * 3. Utility（`u-`）
+ * 3. Scope（`s-`）
+ * 4. Utility（`u-`）
+ *
+ * Blockの粒度が小さいBlockから先にインポートします。
+ * 1. Small block（見出しやリスト、ボタンやアイコンなどの内包される小さなBlock）
+ * 2. Medium block（Small blockを内包する小さなレイアウトを担当するBlock）
+ * 3. Large block（Medium blockを内包する大枠のレイアウトを担当するBlock）
  */
 
 /* -----------------------------------------------------------------------------
@@ -170,20 +181,24 @@
  * Componentレイヤーは多くのプロジェクトで横断的に再利用のできるような、小さな単位のモジュール（機能）です。
  * OOCSSの構造（structure）の機能を担うため、装飾的なスタイルをできるだけ含めないようにします。
  * また、`width`や`margin`といったレイアウトに影響を与えるプロパティもできるだけ含めないようにします。
- * 例えばgridやmediaといったレイアウトパターンが該当します。
  * プレフィックス（接頭辞）として`c-`をつけます。
  */
-@import "object/component/_wrapper";
-@import "object/component/_layout";
+// Small block
+@import "object/component/_list-unstyled";
+@import "object/component/_list-addstyle";
+@import "object/component/_list-ordered";
+@import "object/component/_list-note";
+@import "object/component/_embed";
+// Medium block
+@import "object/component/_block";
+@import "object/component/_list-inline";
 @import "object/component/_media";
 @import "object/component/_flag";
-@import "object/component/_list-unstyled";
-@import "object/component/_list-ordered";
-@import "object/component/_list-addstyle";
-@import "object/component/_list-mark";
-@import "object/component/_embed";
-@import "object/component/_ratio";
 @import "object/component/_table";
+@import "object/component/_ratio";
+// Large block
+@import "object/component/_layout";
+@import "object/component/_wrapper";
 
 /* -----------------------------------------------------------------------------
    #Project
@@ -197,13 +212,32 @@
  * としてまとめられないか検討しましょう。
  * プレフィックス（接頭辞）として`p-`をつけます。
  */
+// Small block
 @import "object/project/_icon";
 @import "object/project/_icon-extend";
-@import "object/project/_button";
-@import "object/project/_breadcrumb";
 @import "object/project/_label";
-@import "object/project/_badge";
-@import "object/project/_box";
+@import "object/project/_button";
+// Medium block
+@import "object/project/_breadcrumb";
+@import "object/project/_list-mark";
+// Large block
+
+/* -----------------------------------------------------------------------------
+   #Scope
+   -------------------------------------------------------------------------- */
+/**
+ * ComponentレイヤーやProjectレイヤーのようなコンポーネント単位ではなく、
+ * ページ内の小さな範囲（スコープ）でのスタイルを定義します。
+ * 繰り返し使用しないページ特有のスタイルはPageレイヤーやHTMLファイルのある各ディレクトリに定義します。
+ * 例えばブログ投稿部分のスタイルとして_blog.scssを作成します。
+ * このレイヤーでは`.s-blog p`のような要素セレクタとの結合子も使うこともできます。
+ * もし、このレイヤーで同じパターンが3箇所で使われていたら、
+ * ProjectレイヤーやUtilityレイヤーでまとめられないか検討しましょう。
+ * プレフィックス（接頭辞）として`s-`をつけます。
+ */
+@import "object/scope/_element";
+@import "object/scope/_block";
+@import "object/scope/_blog";
 
 /* -----------------------------------------------------------------------------
    #Utility
@@ -216,26 +250,16 @@
  * 確実にスタイルを適応させるために`!important`を使用します。
  * プレフィックス（接頭辞）として`u-`をつけます。
  */
+// Small block
 @import "object/utility/_text";
+@import "object/utility/_heading";
 @import "object/utility/_align";
-@import "object/utility/_margin";
 @import "object/utility/_display";
+@import "object/utility/_sr-only";
+// Medium block
 @import "object/utility/_width";
+@import "object/utility/_push";
 @import "object/utility/_offset";
 @import "object/utility/_percent";
-@import "object/utility/_sr-only";
-
-/* =============================================================================
-   #Scope
-   ========================================================================== */
-/**
- * ComponentレイヤーやProjectレイヤーのようなコンポーネント単位ではなく、
- * ページ単位や任意の範囲（スコープ）でのスタイルを定義します。1箇所でしか使わないような特異なスタイルや、
- * ページ単位でComponentやProjectレイヤーのスタイルを微調整したい場合に使用してもかまいません。
- * 例えばブログページのスタイルとして_blog.scssを作成します。
- * このレイヤーでは`.s-blog p`のような要素セレクタとの結合子も使うこともできます。
- * もし、このレイヤーで同じパターンが3箇所で使われていたら、
- * ProjectレイヤーやUtilityレイヤーでまとめられないか検討しましょう。
- * プレフィックス（接頭辞）として`s-`をつけます。
- */
-@import "scope/_blog";
+@import "object/utility/_margin";
+@import "object/utility/_section";

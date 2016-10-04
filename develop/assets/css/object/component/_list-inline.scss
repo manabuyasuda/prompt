@@ -1,0 +1,81 @@
+ /* #List-inline
+   -------------------------------------------------------------------------- */
+/*
+---
+name: list-inline
+category: component
+---
+
+ボタンやラベル、テキストリンクなどを横並びにします。
+
+Modifierは以下のとおりです。
+
+* ガターの追加 `--small`, `--medium`, `--large`
+* 水平位置の変更 `--left`, `--center`, `--right`
+
+```jade
+ul.c-list-inline.c-list-inline--medium.c-list-inline--center-md
+  li.c-list-inline__item
+    a(href="#").p-button.p-button--primary ボタン
+  li.c-list-inline__item
+    a(href="#").p-button.p-button--primary ボタン
+
+ul.c-list-inline.c-list-inline--small
+  li.c-list-inline__item
+    a(href="#") リンク
+  li.c-list-inline__item
+    a(href="#") リンク
+
+ul.c-list-inline.c-list-inline--medium
+  li.c-list-inline__item
+    a(href="#").p-label ボタン
+  li.c-list-inline__item
+    a(href="#").p-label ボタン
+  li.c-list-inline__item
+    a(href="#").p-label ボタン
+```
+*/
+.c-list-inline {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style-type: none;
+}
+
+.c-list-inline__item {
+  display: inline-block;
+  font-size: medium;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+.c-list-inline--small {
+  > .c-list-inline__item:not(:last-child) {
+    margin-right: 0.5em;
+  }
+}
+
+.c-list-inline--medium {
+  > .c-list-inline__item:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.c-list-inline--large {
+  > .c-list-inline__item:not(:last-child) {
+    margin-right: 1.5em;
+  }
+}
+
+@include _responsive('.c-list-inline--left') {
+  text-align: left;
+}
+
+@include _responsive('.c-list-inline--center') {
+  text-align: center;
+}
+
+@include _responsive('.c-list-inline--right') {
+  text-align: right;
+}

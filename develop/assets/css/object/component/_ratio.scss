@@ -26,14 +26,14 @@ div.c-layout.c-layout--medium.c-layout--center
 ```
 */
 .c-ratio {
-  @include _c-ratio('100%');
+  @include _ratio('100%');
 }
 
 .c-ratio__content,
 .c-ratio > iframe,
 .c-ratio > embed,
 .c-ratio > object {
-  @include _c-ratio__content();
+  @include _ratio__content();
 }
 
 .c-ratio--16to9 {
