@@ -1,25 +1,19 @@
  /* #Content
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: content
 name: content
-categories: [layout]
+category: layout
 ---
 
 `<article>`タグが使われるようなメインコンテンツのスタイルです。
 ナビゲーションやバナーなどのレイアウトを含むことはできますが、
 コンポーネント自体はobject/projectレイヤーで定義します。
 
-```block
-<body>
-  <div class="l-content">
-    <article class="l-content s-blog">
-      <div class="l-content__item">
-      </div>
-    </article>
-  </div>
-</body>
+```jade
+div.l-content
+  div.l-content__item
+    p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
 .l-content {

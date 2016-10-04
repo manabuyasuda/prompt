@@ -1,28 +1,24 @@
  /* #Sidebar
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: sidebar
 name: sidebar
-categories: [layout]
+category: layout
 ---
 
 `<aside>`タグが使われるようなサイドバーのスタイルです。
 ナビゲーションやバナーなどのレイアウトを含むことはできますが、
 コンポーネント自体はobject/projectレイヤーで定義します。
 
-```block
-<body>
-  <article class="l-content"></article>
-  <aside class="l-sidebar">
-    <div class="l-sidebar__item">
-       <ul class="p-side-nav"></ul>
-    </div>
-    <div class="l-sidebar__item">
-       <div class="p-banner"></div>
-    </div>
-  </aside>
-</body>
+```jade
+aside.l-sidebar
+  div.l-sidebar__item
+    ul.p-side-nav
+      li リスト
+      li リスト
+  div.l-sidebar__item
+    div.p-banner
+      img(src="http://lorempixel.com/300/200/" alt="")
 ```
 */
 .l-sidebar {

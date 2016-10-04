@@ -16,10 +16,10 @@ Modifierは以下のとおりです。
 ```jade
 table.c-table.c-table--fixed
   tr
-    th.u-percent50 th1
-    th th2
-    th th3
-  tr
+    th.u-percent50.aigis-bg3 th1
+    th.aigis-bg1 th2
+    th.aigis-bg2 th3
+  tr.aigis-bg1
     td td1
     td td2
     td td3

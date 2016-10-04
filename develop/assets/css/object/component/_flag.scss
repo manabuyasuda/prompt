@@ -22,24 +22,22 @@ HTMLは画像・テキストの順番で記述して、Modifierでレイアウ�
 ```jade
 div.c-flag
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/")
+    img(src="http://lorempixel.com/150/150/" alt="")
   div.c-flag__body
-    | 画像とテキストを横並びにするオブジェクトです。余白サイズ、垂直方向、要素の配置順の反転の指定ができます。
+    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
-div.c-flag.c-flag--middle.c-flag--reverse-md
+div.c-flag.c-flag--middle.c-flag--reverse
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/")
+    img(src="http://lorempixel.com/150/150/" alt="")
   div.c-flag__body
-    | 画像とテキストを中央揃え、
-    code md
-    | から画像を右側に反転させます。
+    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-flag.c-flag--stack-md
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/")
+    img(src="http://lorempixel.com/150/150/" alt="")
   div.c-flag__body
     code md
-    | 未満で横並びから縦にレイアウトさせます。
+    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
 $_flag-gutter: $_white-space !default;

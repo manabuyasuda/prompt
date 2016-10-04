@@ -21,8 +21,8 @@ Modifierは以下のとおりです。
 div.c-layout.c-layout--medium.c-layout--center
   div.c-layout__item.u-2of12
     div.c-ratio
-      div.c-ratio__content(style="background-color: #ddd;")
-        div(style="padding: 1em;") c-ratio
+      div.c-ratio__content.aigis-bg1
+        div.aigis-pad 1:1
 ```
 */
 .c-ratio {

@@ -16,34 +16,25 @@ Modifierは以下のとおりです。
 * `.c-layout__item`のカラム幅をまとめて指定 `--colx`, `--colxandx`
 
 ```jade
-div.c-wrapper
-  div.c-layout.c-layout--medium
-    div.c-layout__item.u-8of12-md
-      c-layout__item u-8of12-md
-    div.c-layout__item.u-4of12-md
-      c-layout__item u-4of12-md
+div.c-layout.c-layout--medium
+  div.c-layout__item.u-8of12-md
+    p.aigis-bg1 8/12
+  div.c-layout__item.u-4of12-md
+    p.aigis-bg2 4/12
 
-  div.c-layout.c-layout--medium.c-layout--reverse
-    div.c-layout__item.u-8of12-md
-      c-layout__item u-8of12-md
-    div.c-layout__item.u-4of12-md
-      c-layout__item u-4of12-md
+div.c-layout.c-layout--reverse-md
+  div.c-layout__item.u-8of12-md
+    p.aigis-bg1 8/12
+  div.c-layout__item.u-4of12-md
+    p.aigis-bg2 4/12
 
-  div.c-layout.c-layout--medium.c-layout--center
-    div.c-layout__item.u-8of12-md
-      c-layout__item u-8of12-md
-
-  div.c-layout.c-layout--medium.c-layout--col2-md
-    div.c-layout__item.u-8of12-md
-      c-layout__item c-layout--col2-md
-    div.c-layout__item.u-4of12-md
-      c-layout__item c-layout--col2-md
-
-  div.c-layout.c-layout--medium.c-layout--col4and8
-    div.c-layout__item.u-8of12-md
-      c-layout__item c-layout--col4and8
-    div.c-layout__item.u-4of12-md
-      c-layout__item c-layout--col4and8
+div.c-layout.c-layout--col3-md
+  div.c-layout__item
+    p.aigis-bg1 12/12 → 4/12
+  div.c-layout__item
+    p.aigis-bg2 12/12 → 4/12
+  div.c-layout__item
+    p.aigis-bg3 12/12 → 4/12
 ```
 */
 $_layout-gutter: $_white-space !default;

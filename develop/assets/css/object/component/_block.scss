@@ -1,6 +1,6 @@
  /* #Block
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
 name: block
 category: component
@@ -12,26 +12,18 @@ Modifierは以下のとおりです。
 - 画像を100%表示 `.c-block__image--full`
 - 画像を左右中央に配置 `c-block__image--left`, `c-block__image--center`, `c-block__image--right`
 
-```block
+```jade
 div.c-block
-  div.c-block__body
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   div.c-block__image
-    img(src="http://lorempixel.com/300/200/")
-
+    img(src="http://lorempixel.com/300/200/" alt="")
+  div.c-block__body
+    p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-block
-  div.c-block__image.c-block__image--full
-    img(src="http://lorempixel.com/300/200/")
   div.c-block__body
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
-
-div.c-block
-  div.c-block__image.c-block__image--center-md
-    img(src="http://lorempixel.com/300/200/")
-  div.c-block__body
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+  div.c-block__image
+    img(src="http://lorempixel.com/300/200/" alt="")
 ```
 */
 .c-block {

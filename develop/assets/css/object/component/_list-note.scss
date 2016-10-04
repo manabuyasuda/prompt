@@ -11,19 +11,21 @@ lang属性が`ja`の場合は※、`en_US`の場合は*が表示されます。
 複数行になった場合はテキストの位置で左揃えになります。
 
 ```jade
-ul.c-list-note(lang="ja")
-  li.c-list-note__item
-    | リスト1
-    ul.c-list-note__items
-      li.c-list-note__item
-        | リスト1.1
+div(lang="ja")
+  ul.c-list-note
+    li.c-list-note__item
+      | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+      ul.c-list-note__items
+        li.c-list-note__item
+          | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
-ul.c-list-note(lang="en_US")
-  li.c-list-note__item
-    | List1
-    ul.c-list-note__items
-      li.c-list-note__item
-        | List1.1
+div(lang="en_US")
+  ul.c-list-note
+    li.c-list-note__item
+      | List1
+      ul.c-list-note__items
+        li.c-list-note__item
+          | List1.1
 ```
 */
 .c-list-note {

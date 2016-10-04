@@ -11,9 +11,9 @@ category: component
 ```jade
 div.c-layout__item.u-8of12-md
   ul.c-list-unstyled
-    li リスト1
+    li この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
       ul.c-list-unstyled__items
-        li リスト1.1
+        li この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
           ul.c-list-unstyled__items
             li リスト1.1
 ```

@@ -20,13 +20,15 @@ HTMLは画像・テキストの順番で記述して、Modifierでレイアウ�
 ```jade
 div.c-media
   div.c-media__image
-    img(src="https://placehold.jp/150x150.png")
-  div.c-media__body 画像・テキストの順番でマークアップします。
+    img(src="https://placehold.jp/150x150.png" alt="")
+  div.c-media__body
+    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-media.c-media--reverse
   div.c-media__image
-    img(src="https://placehold.jp/150x150.png")
-  div.c-media__body 画像・テキストの順番でマークアップします。
+    img(src="https://placehold.jp/150x150.png" alt="")
+  div.c-media__body
+  | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
 $_media-gutter: $_white-space !default;

@@ -10,9 +10,9 @@ category: component
 
 ```jade
 ol.c-list-ordered
-  li.c-list-ordered__item リスト1
+  li.c-list-ordered__item この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
     ol.c-list-ordered__items
-      li.c-list-ordered__item リスト1.1
+      li.c-list-ordered__item この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
         ul.c-list-ordered__items
           li.c-list-ordered__item リスト1.1.1
           li.c-list-ordered__item リスト1.1.2

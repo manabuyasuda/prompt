@@ -23,6 +23,7 @@ p: span.p-label タグ名
   text-decoration: none;
   background-color: $_color-link;
   @include _on-event() {
+    color: #fff;
     text-decoration: none;
   }
 }

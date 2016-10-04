@@ -1,22 +1,17 @@
  /* #Main
    -------------------------------------------------------------------------- */
-/*doc
+/*
 ---
-title: main
 name: main
-categories: [layout]
+category: layout
 ---
 
 `<main>`タグのスタイルです。ドキュメントのメインコンテンツを示し、ドキュメント内で1つしか記述できません。
-<article>タグや<nav>タグなどの中に入れることはできません。
+`<article>`タグや`<nav>`タグなどの中に入れることはできません。
 
-取り扱いの難しいタグなので、使わないという選択をするのもいいでしょう。
-
-```block
-<body>
-  <main id="l-main">
-  </main>
-</body>
+```jade
+main#l-main.main
+  p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
 #l-main {

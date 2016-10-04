@@ -1,8 +1,21 @@
  /* #Element
    -------------------------------------------------------------------------- */
-/**
- * BEMにおけるElementの余白を一括で指定します。
- */
+/*
+---
+name: element
+category: scope
+---
+
+BEMにおけるElementの余白を一括で指定します。
+
+最後以外の直近の要素に均一な余白がつきます。
+
+```jade
+div.s-element
+  p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+  p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+```
+*/
 .s-element {
   > {
     section, address,

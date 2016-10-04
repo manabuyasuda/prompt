@@ -13,11 +13,11 @@ Modifierは以下のとおりです。
 * 左右の余白を追加 `--small`, `--medium`, `--large`
 
 ```jade
-div.c-wrapper(style="background-color: #ddd") c-wrapper
+div.c-wrapper.aigis-bg1 c-wrapper
 
-div.c-wrapper.c-wrapper--medium(style="background-color: #ddd") c-wrapper c-wrapper--medium
+div.c-wrapper.c-wrapper--medium.aigis-bg1 c-wrapper c-wrapper--medium
 
-div.c-wrapper.u-4of12(style="background-color: #ddd") c-wrapper u-8of12
+div.c-wrapper.u-4of12.aigis-bg1 c-wrapper u-8of12
 ```
 */
 $_wrapper-padding: $_white-space !default;

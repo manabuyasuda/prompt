@@ -16,18 +16,10 @@ Modifierは以下のとおりです。
 
 ```jade
 p
-  button.p-button(type="button") p-button
+  button.p-button.p-button--primary(type="button") p-button
 
 p
-  a.p-button.p-button--full(href="#") p-button p-button--full
-
-ul.c-layout.c-layout--col3
-  li.c-layout__item
-    button.p-button.p-button--pill-left.p-button--full(type="button") p-button--pill-left
-  li.c-layout__item
-    button.p-button.p-button--pill-center.p-button--full(type="button") p-button--pill-center
-  li.c-layout__item
-    button.p-button.p-button--pill-right.p-button--full(type="button") p-button--pill-right
+  a.p-button.p-button--primary.p-button--full(href="#") p-button p-button--full
 ```
 */
 $_button-pill-base: 0 !default;
@@ -83,4 +75,14 @@ $_button-pill-round: 3em !default;
 
 .p-button--pill-left {
   border-radius: $_button-pill-round $_button-pill-base $_button-pill-base $_button-pill-round;
+}
+
+.p-button--primary {
+  color: teal;
+  border: 1px solid teal;
+  transition-duration: 0.3s;
+  @include _on-event {
+    color: #fff;
+    background-color: teal;
+  }
 }

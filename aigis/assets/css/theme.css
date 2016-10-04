@@ -1,5 +1,4 @@
 .aigis-body {
-  /*  height: 50px;*/
 }
 
 .aigis-wrapper {
@@ -8,10 +7,24 @@
 }
 
 .aigis-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
   margin: 0 0 2rem;
   padding: 12px 0;
   border-bottom: 1px solid #eee;
   background-color: #fff;
+}
+
+.aigis-main-nav {
+  max-width: 960px;
+  margin: auto;
+}
+
+.aigis-inner {
+  margin-top: 100px;
 }
 
 .aigis-nav {
@@ -47,6 +60,7 @@
 }
 
 .aigis-module__filepath {
+  display: inline-block;
   margin-top: -2.6rem;
   margin-bottom: 1rem;
   color: #888;
@@ -92,6 +106,28 @@
   border-radius: 3px 3px 0 0;
 }
 
+.aigis-preview > section:not(:last-child),
+.aigis-preview > address:not(:last-child),
+.aigis-preview > h1:not(:last-child),
+.aigis-preview > h2:not(:last-child),
+.aigis-preview > h3:not(:last-child),
+.aigis-preview > h4:not(:last-child),
+.aigis-preview > h5:not(:last-child),
+.aigis-preview > h6:not(:last-child),
+.aigis-preview > p:not(:last-child),
+.aigis-preview > ul:not(:last-child),
+.aigis-preview > ol:not(:last-child),
+.aigis-preview > dl:not(:last-child),
+.aigis-preview > pre:not(:last-child),
+.aigis-preview > div:not(:last-child),
+.aigis-preview > blockquote:not(:last-child),
+.aigis-preview > figure:not(:last-child),
+.aigis-preview > table:not(:last-child),
+.aigis-preview > form:not(:last-child),
+.aigis-preview > a:not(:last-child) {
+  margin-bottom: 1.7rem;
+}
+
 .aigis-preview + pre {
   margin-top: 0;
   border-top: none;
@@ -114,3 +150,10 @@
   line-height: 40px;
   vertical-align: middle;
 }
+
+.aigis-bg1 { background-color: #eee; }
+.aigis-bg2 { background-color: #ccc; }
+.aigis-bg3 { background-color: #aaa; }
+.aigis-bg4 { background-color: #888; }
+.aigis-bg5 { background-color: #666; }
+.aigis-pad { padding: 1em; }
