@@ -63,6 +63,9 @@
  * icon-extend...アイコンフォントを拡張するModifierです。
  * label...インラインのラベルコンポーネントです。
  * button...ボタンコンポーネントです。
+ * heading-h2...`<h2>`で使うような見出しです。
+ * heading-h3...`<h3>`で使うような見出しです。
+ * heading-h4...`<h4>`で使うような見出しです。
  * breadcrumb...パンくずリストコンポーネントです。
  * list-mark...リストアイテムの左にアイコンを配置します。
  *
@@ -73,7 +76,6 @@
  *
  * UTILITY
  * text...テキストのスタイルに関する汎用クラスです。
- * heading...見出しの汎用スタイルです。
  * align...画像などを中央や右側に配置します。
  * display...要素の表示や改行をコントロールする場合に使用します。
  * sr-only...要素を非表示にさせますが、スクリーンリーダーには読み上げられます。
@@ -217,6 +219,9 @@
 @import "object/project/_icon-extend";
 @import "object/project/_label";
 @import "object/project/_button";
+@import "object/project/_heading-h2";
+@import "object/project/_heading-h3";
+@import "object/project/_heading-h4";
 // Medium block
 @import "object/project/_breadcrumb";
 @import "object/project/_list-mark";
@@ -252,7 +257,6 @@
  */
 // Small block
 @import "object/utility/_text";
-@import "object/utility/_heading";
 @import "object/utility/_align";
 @import "object/utility/_display";
 @import "object/utility/_sr-only";
