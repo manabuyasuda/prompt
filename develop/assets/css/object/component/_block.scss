@@ -16,7 +16,7 @@ Modifierは以下のとおりです。
 ```jade
 div.c-block
   div.c-block__item
-    img(src="https://placehold.jp/600x400.png" alt="")
+    img(src="https://placehold.jp/300x200.png" alt="")
   div.c-block__item
     p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
@@ -24,11 +24,11 @@ div.c-block
   div.c-block__item
     p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
   div.c-block__item
-    img(src="https://placehold.jp/600x400.png" alt="")
+    img(src="https://placehold.jp/300x200.png" alt="")
 
 div.c-block.c-block--reverse-md
   div.c-block__item
-    img(src="https://placehold.jp/600x400.png" alt="")
+    img(src="https://placehold.jp/300x200.png" alt="")
   div.c-block__item
     p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```

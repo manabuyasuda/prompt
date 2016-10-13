@@ -9,9 +9,9 @@ category: utility
 画像などを左右や中央に配置します。
 
 ```jade
-div: img(src="http://lorempixel.com/150/150/" alt="")
-div: img.u-align-center(src="http://lorempixel.com/150/150/" alt="")
-div: img.u-align-right(src="http://lorempixel.com/150/150/" alt="")
+div: img(src="https://placehold.jp/x150.png" alt="")
+div: img.u-align-center(src="https://placehold.jp/x150.png" alt="")
+div: img.u-align-right(src="https://placehold.jp/x150.png" alt="")
 ```
 */
 .u-align-left {

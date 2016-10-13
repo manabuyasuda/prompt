@@ -22,19 +22,19 @@ HTMLは画像・テキストの順番で記述して、Modifierでレイアウ�
 ```jade
 div.c-flag
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/" alt="")
+    img(src="https://placehold.jp/150x150.png" alt="")
   div.c-flag__body
     | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-flag.c-flag--middle.c-flag--reverse
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/" alt="")
+    img(src="https://placehold.jp/150x150.png" alt="")
   div.c-flag__body
     | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-flag.c-flag--stack-md
   div.c-flag__image
-    img(src="http://lorempixel.com/150/150/" alt="")
+    img(src="https://placehold.jp/150x150.png" alt="")
   div.c-flag__body
     code md
     | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
