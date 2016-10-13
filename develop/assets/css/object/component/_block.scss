@@ -9,59 +9,84 @@ category: component
 画像とテキストをblock（縦）に配置します。
 Modifierは以下のとおりです。
 
-- 画像を100%表示 `.c-block__image--full`
-- 画像を左右中央に配置 `c-block__image--left`, `c-block__image--center`, `c-block__image--right`
+- 要素の順番を逆に配置 `c-block--reverse`
+- 画像を左右中央に配置（Blockで指定） `c-block--left`, `c-block--center`, `c-block--right`
+- 画像を左右中央に配置（Elementで指定） `c-block__item--left`, `c-block__item--center`, `c-block__item--right`
 
 ```jade
 div.c-block
-  div.c-block__image
-    img(src="http://lorempixel.com/300/200/" alt="")
-  div.c-block__body
+  div.c-block__item
+    img(src="https://placehold.jp/600x400.png" alt="")
+  div.c-block__item
     p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 
 div.c-block
-  div.c-block__body
+  div.c-block__item
     p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
-  div.c-block__image
-    img(src="http://lorempixel.com/300/200/" alt="")
+  div.c-block__item
+    img(src="https://placehold.jp/600x400.png" alt="")
+
+div.c-block.c-block--reverse-md
+  div.c-block__item
+    img(src="https://placehold.jp/600x400.png" alt="")
+  div.c-block__item
+    p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
 .c-block {
   display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.c-block__image {
+.c-block__item {
   display: block;
-}
-
-.c-block__image--full {
-  > img {
-    display: block;
-    width: 100%;
-    max-width: none;
+  width: 100%;
+  &:not(:first-of-type) {
+    margin-top: 0.25em;
   }
-}
-
-@include _responsive('.c-block__image--left') {
-  text-align: left;
-}
-
-@include _responsive('.c-block__image--center') {
-  text-align: center;
-}
-
-@include _responsive('.c-block__image--right') {
-  text-align: right;
-}
-
-.c-block__body {
-  display: block;
   > :last-child {
     margin-bottom: 0;
   }
 }
 
-.c-block__image + .c-block__body,
-.c-block__body + .c-block__image {
-  margin-top: 0.25em;
+.c-block__item > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+
+@include _responsive('.c-block__item--left') {
+  text-align: left;
+}
+
+@include _responsive('.c-block__item--center') {
+  text-align: center;
+}
+
+@include _responsive('.c-block__item--right') {
+  text-align: right;
+}
+
+@include _responsive('.c-block--left') {
+  text-align: left;
+}
+
+@include _responsive('.c-block--center') {
+  text-align: center;
+}
+
+@include _responsive('.c-block--right') {
+  text-align: right;
+}
+
+@include _responsive('.c-block--reverse') {
+  display: table;
+  > .c-block__item:first-child {
+    margin-top: 0.5rem;
+  }
+  > .c-block__item:last-child {
+    display: table-header-group;
+  }
 }
