@@ -68,6 +68,7 @@
  * heading-h4...`<h4>`で使うような見出しです。
  * breadcrumb...パンくずリストコンポーネントです。
  * list-mark...リストアイテムの左にアイコンを配置します。
+ * figure...キャプションをつけた画像コンポーネントです。
  *
  * SCOPE
  * element...BEMにおけるElementの余白を一括で指定します。
@@ -225,6 +226,7 @@
 // Medium block
 @import "object/project/_breadcrumb";
 @import "object/project/_list-mark";
+@import "object/project/_figure";
 // Large block
 
 /* -----------------------------------------------------------------------------

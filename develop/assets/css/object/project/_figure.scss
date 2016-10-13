@@ -1,0 +1,60 @@
+ /* #Figure
+   -------------------------------------------------------------------------- */
+/*
+---
+name: figure
+category: project
+---
+
+キャプションをつけた画像コンポーネントです。
+
+- `figure`と`figcaption`を使うことを想定しています。
+- 基本的に画像のサイズによって`figure`のサイズが決まります。
+- キャプションの横幅は基本的に画像の横幅に依存します。
+- 画像が最小幅の`min-width`より小さい場合、画像は実寸ですが、`figure`とキャプションは最小幅をキープします。
+
+```jade
+figure.p-figure
+  img.p-figure__image(src="https://placehold.jp/300x200.png" alt="")
+  figcaption.p-figure__caption-bottom この文章はダミーです。
+
+figure.p-figure
+  figcaption.p-figure__caption-top この文章はダミーです。
+  img.p-figure__image(src="https://placehold.jp/300x200.png" alt="")
+
+figure.p-figure
+  img.p-figure__image(src="https://placehold.jp/100x100.png" alt="")
+  figcaption.p-figure__caption-bottom この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+
+figure.p-figure
+  img.p-figure__image(src="https://placehold.jp/800x200.png" alt="")
+  figcaption.p-figure__caption-bottom この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
+```
+*/
+.p-figure {
+  display: table;
+  /* キャプションの最小幅。 */
+  min-width: 280px;
+  margin: 0;
+  padding: 0;
+}
+
+.p-figure__image {
+  display: block;
+  margin: 0 auto;
+}
+
+.p-figure__caption-top {
+  display: table-caption;
+  caption-side: top;
+}
+
+.p-figure__caption-bottom {
+  display: table-caption;
+  caption-side: bottom;
+}
+
+.p-figure__caption-top,
+.p-figure__caption-bottom {
+  font-size: 0.8rem;
+}
