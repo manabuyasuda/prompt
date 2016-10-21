@@ -122,16 +122,16 @@
 @import "foundation/mixin/_mq-down";
 @import "foundation/mixin/_responsive";
 @import "foundation/mixin/_on-event";
-// Small block
+// Content
 @import "foundation/mixin/_clearfix";
 @import "foundation/mixin/_sr-only";
 @import "foundation/mixin/_list-unstyled";
-// Medium block
+// Medium Container
 @import "foundation/mixin/_list-mark";
 @import "foundation/mixin/_media";
 @import "foundation/mixin/_flag";
 @import "foundation/mixin/_ratio";
-// Large block
+// Large Container
 @import "foundation/mixin/_layout";
 
 /**
@@ -171,10 +171,10 @@
  * 3. Scope（`s-`）
  * 4. Utility（`u-`）
  *
- * Blockの粒度が小さいBlockから先にインポートします。
- * 1. Small block（見出しやリスト、ボタンやアイコンなどの内包される小さなBlock）
- * 2. Medium block（Small blockを内包する小さなレイアウトを担当するBlock）
- * 3. Large block（Medium blockを内包する大枠のレイアウトを担当するBlock）
+ * ContentとContainerという2つの役割を基準にモジュールを分割します。
+ * 1. Content（見出しやリスト、ボタンやアイコンなどのページの内容を表現する小さなオブジェクトです。）
+ * 2. Medium Container（Contentを内包するオブジェクトで、Contentのスタイルを上書きすることができます。）
+ * 3. Large Container（ContentやMedium Containerを内包するオブジェクトで、内包するオブジェクトに干渉することはできません。）
  */
 
 /* -----------------------------------------------------------------------------
@@ -186,20 +186,20 @@
  * また、`width`や`margin`といったレイアウトに影響を与えるプロパティもできるだけ含めないようにします。
  * プレフィックス（接頭辞）として`c-`をつけます。
  */
-// Small block
+// Content
 @import "object/component/_list-unstyled";
 @import "object/component/_list-addstyle";
 @import "object/component/_list-ordered";
 @import "object/component/_list-note";
 @import "object/component/_embed";
-// Medium block
+// Medium Container
 @import "object/component/_block";
 @import "object/component/_list-inline";
 @import "object/component/_media";
 @import "object/component/_flag";
 @import "object/component/_table";
 @import "object/component/_ratio";
-// Large block
+// Large Container
 @import "object/component/_layout";
 @import "object/component/_wrapper";
 
@@ -215,7 +215,7 @@
  * としてまとめられないか検討しましょう。
  * プレフィックス（接頭辞）として`p-`をつけます。
  */
-// Small block
+// Content
 @import "object/project/_icon";
 @import "object/project/_icon-extend";
 @import "object/project/_label";
@@ -223,11 +223,11 @@
 @import "object/project/_heading-h2";
 @import "object/project/_heading-h3";
 @import "object/project/_heading-h4";
-// Medium block
+// Medium Container
 @import "object/project/_breadcrumb";
 @import "object/project/_list-mark";
 @import "object/project/_figure";
-// Large block
+// Large Container
 
 /* -----------------------------------------------------------------------------
    #Scope
@@ -242,6 +242,7 @@
  * ProjectレイヤーやUtilityレイヤーでまとめられないか検討しましょう。
  * プレフィックス（接頭辞）として`s-`をつけます。
  */
+// Medium Container
 @import "object/scope/_element";
 @import "object/scope/_block";
 @import "object/scope/_blog";
@@ -257,15 +258,16 @@
  * 確実にスタイルを適応させるために`!important`を使用します。
  * プレフィックス（接頭辞）として`u-`をつけます。
  */
-// Small block
+// Content
 @import "object/utility/_text";
 @import "object/utility/_align";
 @import "object/utility/_display";
 @import "object/utility/_sr-only";
-// Medium block
 @import "object/utility/_width";
 @import "object/utility/_push";
 @import "object/utility/_offset";
 @import "object/utility/_percent";
+// Medium Container
 @import "object/utility/_margin";
+// Large Container
 @import "object/utility/_section";
