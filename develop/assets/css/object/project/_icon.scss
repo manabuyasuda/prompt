@@ -12,17 +12,16 @@ category: project
 - 装飾的なアイコンは`<span>`と`aria-hidden="true"`でマークアップをします。
 - 意味を伝えたいアイコンは`aria-label=""`でマークアップします。
 - テキスト全体を読み上げたときに違和感が出ないようにします。
-- テキストを表示できない場合は`.u-sr-only`でテキストをマークアップします（非表示のままスクリーンリーダーには読み上げられます）。
 
 ```jade
 div
-  span.p-icon.p-icon--home(aria-hidden="true")
+  span.p-icon.p-icon--left.p-icon--home(aria-hidden="true")
   | ホーム
 div
-  span.p-icon.p-icon--home(aria-label="ホーム")
+  | ホーム
+  span.p-icon.p-icon--right.p-icon--home(aria-hidden="true")
 div
-  span.p-icon.p-icon--home(aria-hidden="true")
-  span.u-sr-only ホーム
+  span.p-icon.p-icon--home(aria-label="ホーム")
 ```
 */
 @font-face {

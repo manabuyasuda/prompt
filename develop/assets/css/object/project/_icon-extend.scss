@@ -1,1 +1,12 @@
-/* アイコンのModifer */
+/**
+ * アイコンフォントを拡張するModifierです。
+ * _icon.scssのModifierを指定します。
+ * アイコンが表示される`:before`擬似要素に指定するのが望ましいです。
+ */
+.p-icon--left:before {
+  margin-right: 0.25em;
+}
+
+.p-icon--right:before {
+  margin-left: 0.25em;
+}
