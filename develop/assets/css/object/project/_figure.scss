@@ -44,17 +44,18 @@ figure.p-figure
   margin: 0 auto;
 }
 
-.p-figure__caption-top {
+.p-figure__caption-top,
+.p-figure__caption-bottom {
   display: table-caption;
+  font-size: 0.8rem;
+}
+
+.p-figure__caption-top {
   caption-side: top;
 }
 
 .p-figure__caption-bottom {
-  display: table-caption;
   caption-side: bottom;
 }
 
-.p-figure__caption-top,
-.p-figure__caption-bottom {
-  font-size: 0.8rem;
-}
+
