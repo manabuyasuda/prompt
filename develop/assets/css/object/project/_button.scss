@@ -11,8 +11,6 @@ category: project
 Modifierは以下のとおりです。
 
 * 100%表示 `--full`
-* 真円 `--circle`
-* 楕円 `--pill`, `--pill-right`, `--pill-center`, `--pill-left`
 
 ```jade
 p
@@ -22,9 +20,6 @@ p
   a.p-button.p-button--primary.p-button--full(href="#") p-button p-button--full
 ```
 */
-$_button-pill-base: 0 !default;
-$_button-pill-round: 3em !default;
-
 .p-button {
   display: inline-block;
   margin: 0;
@@ -52,29 +47,6 @@ $_button-pill-round: 3em !default;
 
 .p-button--full {
   width: 100%;
-}
-
-.p-button--circle {
-  border-radius: 50%;
-}
-
-/**
- * カプセル状の錠剤のような形をしたボタンコンポーネントです。
- */
-.p-button--pill {
-  border-radius: $_button-pill-round;
-}
-
-.p-button--pill-right {
-  border-radius: $_button-pill-base $_button-pill-round $_button-pill-round $_button-pill-base;
-}
-
-.p-button--pill-center {
-  border-radius: $_button-pill-base;
-}
-
-.p-button--pill-left {
-  border-radius: $_button-pill-round $_button-pill-base $_button-pill-base $_button-pill-round;
 }
 
 .p-button--primary {
