@@ -6,18 +6,15 @@ name: flag
 category: component
 ---
 
-画像とテキストを横並びにするオブジェクトです。縦方向の指定ができます。
+画像とテキストを横並びにするオブジェクトです。垂直方向の指定ができます。
 
 Modifierは以下のとおりです。
 
 * 余白の変更 `--small`, `--large`
 * vertical-alignの変更 `--middle`, `--bottom`
 * 配置を反転 `--reverse`
-* 横並びからブロック `--stack`
 
 HTMLは画像・テキストの順番で記述して、Modifierでレイアウトを変更します。
-
-ブレイクポイントは`stack`のみ`max-width`が指定されています。
 
 ```jade
 div.c-flag
@@ -30,13 +27,6 @@ div.c-flag.c-flag--middle.c-flag--reverse
   div.c-flag__image
     img(src="https://placehold.jp/150x150.png" alt="")
   div.c-flag__body
-    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
-
-div.c-flag.c-flag--stack-md
-  div.c-flag__image
-    img(src="https://placehold.jp/150x150.png" alt="")
-  div.c-flag__body
-    code md
     | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。This sentence is a dummy. Size of the character, amount, character spacing, has been put in order to check the line spacing and the like.
 ```
 */
@@ -111,31 +101,5 @@ $_flag-gutter-large: ($_flag-gutter * 2) !default;
   &.c-flag--large > .c-flag__image {
     padding-right: 0;
     padding-left: $_flag-gutter-large;
-  }
-}
-
-/**
- * 横並びから縦にレイアウトされます。
- */
-@include _responsive('.c-flag--stack', $_breakpoint-down) {
-  display: block;
-  > .c-flag__image,
-  > .c-flag__body {
-    width: 100%;
-    display: block;
-  }
-  > .c-flag__image {
-    margin-bottom: $_flag-gutter;
-    padding-right: 0;
-    padding-left: 0;
-  }
-  > .c-flag__image > img {
-    max-width: 100%;
-  }
-  &.c-flag--small > .c-flag__image {
-    margin-bottom: $_flag-gutter-small;
-  }
-  &.c-flag--large > .c-flag__image {
-    margin-bottom: $_flag-gutter-large;
   }
 }
