@@ -144,7 +144,9 @@ gulp.task('sass', function(){
   .pipe(browserSync.reload({stream: true}));
 });
 
-
+/**
+ * Babelを使ってES2016を変換、watchifyでファイルの監視をします。
+ */
 function bundle(watching = false) {
   const b = browserify({
     entries: [develop.js],
@@ -165,7 +167,6 @@ function bundle(watching = false) {
       .pipe(source('bundle.js'))
       .pipe(buffer())
       .pipe($.sourcemaps.init({loadMaps: true}))
-      // .pipe($.uglify())
       .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(release.js));
   }
