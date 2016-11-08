@@ -2,8 +2,8 @@
 
 window.jQuery = window.$ = require('jquery');
 
-import ResizeManager from './module/ResizeManager';
-import ScrollManager from './module/ScrollManager';
+import ResizeManager from './modules/ResizeManager';
+import ScrollManager from './modules/ScrollManager';
 
 const resizeManager = new ResizeManager();
 const scrollManager = new ScrollManager();
